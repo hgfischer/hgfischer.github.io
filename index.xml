@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Memory Leak</title>
+    <link>http://hgfischer.org/</link>
+    <description>Recent content on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 05 Feb 2015 21:26:44 +0000</lastBuildDate>
+    <atom:link href="http://hgfischer.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Manage multiple GOPATH dirs with ease</title>
+      <link>http://hgfischer.org/article/managing-multiple-gopaths/</link>
+      <pubDate>Thu, 05 Feb 2015 21:26:44 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/article/managing-multiple-gopaths/</guid>
+      <description>&lt;p&gt;Usually I have only one GOPATH in my machine and thats most Gophers out there recommend. However, sometimes we just
+need to work on different projects with different versions of the same dependency, and it is out of question to update
+them. We just don&amp;rsquo;t want to break something that is working, or mess with it.&lt;/p&gt;
+
+&lt;p&gt;The quick solution is to point GOPATH to somewhere else, but everytime we have to swap the project we are working on,
+we need to change it again.&lt;/p&gt;
+
+&lt;p&gt;So I just came up with a simple solution that works on command line shell with Bash, and can be adapted to other
+shells. Since I am a vim user, this should work well. I do not recommend this method for Sublime Text users or just any
+other IDE that uses its own method for setting GOPATH. It will not work unless you load the Editor/IDE from the same
+command line shell and it do not have its own way to setup GOPATH.&lt;/p&gt;
+
+&lt;p&gt;The solution is simple. Just include the following snippet in your &lt;code&gt;~/.bashrc&lt;/code&gt; (or &lt;code&gt;~/.bash_profile&lt;/code&gt;) and reload your
+shell environment with &lt;code&gt;source ~/.bashrc&lt;/code&gt;. This snippet will create a shell function that will override the builtin
+command &lt;code&gt;cd&lt;/code&gt; with a customized one that scans the entered directory, and every other above, for a file named &lt;code&gt;.gopath&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd () {
+    builtin cd &amp;quot;$@&amp;quot;
+    cdir=$PWD
+    while [ &amp;quot;$cdir&amp;quot; != &amp;quot;/&amp;quot; ]; do
+        if [ -e &amp;quot;$cdir/.gopath&amp;quot; ]; then
+            export GOPATH=$cdir
+            break
+        fi
+        cdir=$(dirname &amp;quot;$cdir&amp;quot;)
+    done
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you just need to create a &lt;code&gt;.gopath&lt;/code&gt; file in every directory you want as your GOPATH and every time you enter this
+directory, the redefined &lt;code&gt;cd&lt;/code&gt; function will set the GOPATH of your current environment to this directory.&lt;/p&gt;
+
+&lt;p&gt;For example, let us create two directories, &lt;code&gt;A&lt;/code&gt; and &lt;code&gt;B&lt;/code&gt;, both with a subdirectory &lt;code&gt;src&lt;/code&gt; to fully illustrate the solution.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ go env GOPATH
+/home/user/Go
+
+$ mkdir -p ~/A/src &amp;amp;&amp;amp; touch ~/A/.gopath
+$ mkdir -p ~/B/src &amp;amp;&amp;amp; touch ~/B/.gopath
+
+$ cd ~/A/src
+$ go env GOPATH
+/home/user/A
+
+$ cd ~/B/src
+$ go env GOPATH
+/home/user/B
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ok, but now I want my old GOPATH back again&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd /home/user/Go
+$ go env GOPATH
+/home/user/B
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Oops&amp;hellip; We just need to touch .gopath here!!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ touch /home/user/Go/.gopath
+$ cd .
+$ go env GOPATH
+/home/user/Go
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! Simple GOPATH management without external dependencies (eg. direnv)!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux e Notebooks Samsung</title>
+      <link>http://hgfischer.org/artigo/linux-notebook-samsung/</link>
+      <pubDate>Sun, 23 Nov 2014 23:21:56 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/linux-notebook-samsung/</guid>
+      <description>&lt;p&gt;Linux e Notebooks já deixaram de ser uma dicotomia, mas alguns problemas ainda surgem em pleno 2014. Fabricantes de
+hardware não param de inovar e ao mesmo tempo a comunidade nem sempre consegue todas as informações necessárias para
+implementar os drivers e módulos para o novo hardware no Kernel.&lt;/p&gt;
+
+&lt;p&gt;Meu notebook Samsung NP550P5C-AD1BR é uma excelente máquina, mas tem um problema com aquecimento excessivo. A BIOS dele
+não oferece opções para lidar com a configuração da ventoínha, nem minha instalação do Ubuntu 14.04 LTS que simplesmente
+se recusa a detectar a ventoínha, mesmo utilizando o módulo &lt;code&gt;samsung-laptop&lt;/code&gt; e o software &lt;code&gt;samsung-tools&lt;/code&gt; que em teoria
+deveriam funcionar.&lt;/p&gt;
+
+&lt;p&gt;Após muita pesquisa descobri que os notebooks Samsung possuem um problema relacionado ao uso da UEFI e que este problema
+foi contornado em versões anteriores do Kernel, com um &lt;em&gt;patch&lt;/em&gt; do próprio Linus Torvalds. Uma outra alteração para estes
+notebooks, fez com que o módulo de kernel &lt;code&gt;samsung-laptop&lt;/code&gt; deixasse de funcionar caso o notebook esteja operando em modo
+UEFI ao invés do modo legado da BIOS.&lt;/p&gt;
+
+&lt;p&gt;Eu ainda tinha um problema com aquecimento e não estava vendo a BIOS do notebook ajustar adequadamente a velocidade da
+ventoínha para dissipar o calor. Por este motivo voltei atrás e reinstalei o Linux (obrigado Puppet!) sob o modo legado
+da BIOS, para conseguir utilizar o devido módulo do kernel e forçar uma velocidade maior da ventoínha.&lt;/p&gt;
+
+&lt;p&gt;Com isso, a temperatura média da CPU caiu de 80ºC para 50ºC!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Do Mac para o Linux</title>
+      <link>http://hgfischer.org/artigo/do-mac-para-o-linux/</link>
+      <pubDate>Sat, 22 Nov 2014 21:08:56 -0200</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/do-mac-para-o-linux/</guid>
+      <description>
+
+&lt;p&gt;Eu voltei do mundo Mac para o mundo Linux no início de 2013 quando meu velho Macbook Pro 2008 começou a ficar
+ultrapassado. Lembro de passar uns maus bocados tentando abrir as fotos que estava tirando com minha câmera digital nele.&lt;/p&gt;
+
+&lt;p&gt;Sou usuário Linux desde a época em que se comprava revistas que vinham com CD do Conectiva Guarani. Naquela época era
+comum utilizar um &lt;em&gt;dual-boot&lt;/em&gt; com Windows, pois o Linux não era capaz de substituir a maioria das funções de um PC
+Windows. Nesta mesma época Macintosh era equipamento utilizado apenas em algumas agências de publicidade e estúdios de
+computação gráfica, como uma opção &amp;ldquo;acessível&amp;rdquo; às caríssimas estações da Silicon Graphics.&lt;/p&gt;
+
+&lt;p&gt;Eu só virei usuário Mac em 2009 quando fui influenciado pela comunidade de programadores que viam o equipamento como a
+melhor ferramenta, combinando uma plataforma estável e bonita, bons softwares comerciais (Textmate, Keynote, etc) com
+características da plataforma Unix. Isto ainda é factível, tirando algumas peculiaridades, como a falta de um gerenciador
+de pacotes confiável (MacPorts e Homebrew são horríveis) e os problemas com algumas tecnologias (ex.: Java), o que mais
+me incomoda é o alto custo.&lt;/p&gt;
+
+&lt;p&gt;Antes de desistir do Mac cheguei até a montar um Hackintosh caseiro, com 4x mais RAM e uma CPU mais recente, pra dar
+conta do trabalho pesado com fotos e vídeos. O projeto até que funcionou, de um certo modo. Era estável, mas não podia
+sequer pensar em fazer updates do sistema operacional, algo que me incomodava muito principalmente no quesito segurança.
+No final o Hackintosh virou um desktop Windows e o Steam nele virou &amp;ldquo;fumaça&amp;rdquo;, pois a falta de tempo e ânimo para jogar
+eram bem mais &amp;ldquo;sólidos&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Resolvi então trocar meu velho notebook por um que atendesse minhas necessidades. Muito espaço em disco, muita RAM e a
+melhor CPU que o melhor custo/benefício pudesse encontrar. Pesquisar Macs com estas características aqui no Brasil é uma
+tarefa desanimadora. Na época, lembro que um Macbook Pro Core i5 com 4GB de RAM e 500GB de HD custava algo em torno de
+R$4000 nas lojas que vendiam com Nota Fiscal. Enquanto isso, era fácil encontrar notebooks Windows com processadores
+Intel Core i7, 1TB de HD, BlueRay, 8GB de RAM, etc, por menos de R$2700. Como a grana estava curta, achei que valia a
+pena reconsiderar as outras opções.&lt;/p&gt;
+
+&lt;p&gt;Dado todo o background, não foi difícil voltar ao mundo Linux. Adquiri um notebook da Samsung top-de-linha por &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; do
+preço de um Macbook equivalente em termos de CPU, RAM e HD. Óbviamente os Macs são muito melhores em outros quesitos,
+como resistência, material, tela, gabinete, etc, mas isto tudo é secundário quando se precisa de alto custo/benefício.&lt;/p&gt;
+
+&lt;p&gt;Desde que retornei ao Linux, outros acontecimentos importantes corroborarm minha decisão:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Docker fundou um novo tipo de &lt;em&gt;cloud computing&lt;/em&gt; e é baseado em Linux. Desenvolvedores que utilizam Macs são obrigados
+a virtualizar Linux dentro de seus Macs para rodar Docker;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;NSA é revelada ao mundo como o Big Brother, inclusive com relações com grandes empresas incluindo a Apple;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Últimas versões do Mac OS X estão apresentando muitos problemas;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Apple seguindo para um modelo de hardware totalmente fechado e que não aceita upgrades;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;finalizando&#34;&gt;Finalizando&lt;/h2&gt;
+
+&lt;p&gt;Claro que nem tudo é perfeito. Ainda surgem problemas de estabilidade nas diferentes distribuições Linux, mas eu já
+aprendi a contornar o problema. Tenho um mecanismo eficiente de sincronia de arquivos como backup e automatizei todo o
+setup dos meus computadores Linux com Puppet. Desta forma não preciso hesitar muito em reinstalar o Linux ou atualizá-lo
+para uma versão mais nova.&lt;/p&gt;
+
+&lt;p&gt;Alias, este ano fiz um upgrade no meu notebook. Coloquei um SSD e o HD antigo entrou no lugar do BlueRay que praticamente
+não tem mais utilidade para mim. Fazer isto nos Macbooks mais novos, onde tudo é soldado na placa-mãe, é impossível.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Go-OTP</title>
+      <link>http://hgfischer.org/project/go-otp/</link>
+      <pubDate>Thu, 20 Nov 2014 22:12:13 -0200</pubDate>
+      
+      <guid>http://hgfischer.org/project/go-otp/</guid>
+      <description>&lt;p&gt;Package go-otp implements one-time-password generators used in 2-factor authentication systems like RSA-tokens.
+Currently this supports both HOTP (RFC-4226) and TOTP (RFC-6238).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hgfischer/go-otp&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://godoc.org/github.com/hgfischer/go-otp&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MySQL Super Dump</title>
+      <link>http://hgfischer.org/project/mysqlsuperdump/</link>
+      <pubDate>Sat, 10 Aug 2013 15:19:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/project/mysqlsuperdump/</guid>
+      <description>&lt;p&gt;The following text is fiction based on a true story, but it can happen with lots of development teams over the world:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Once upon a time there was a development team that liked to use dumps from the production database in their
+development environments to have the same content and behavior of the production system in their machines.
+To avoid security problems, the system administrator created a script to dump the production database, import in a
+temporary database, then replace all sensitive data, like salts, passwords, customer names, emails, etc, for fake
+data, then export a dump of this temporary database to a file that is the dump developers would use.
+However this script was taking more time to run, day by day, and each day it was using more resources from the
+server to run, until it exploded!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Based on this true story I&amp;rsquo;ve decided to make a program to solve this problem. The first version was made in Python 2.7
+in a few hours, but I got trapped in text encoding problems of Python and MySQLdb library. So I&amp;rsquo;ve decided to rewrite
+it using Go.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hgfischer/mysqlsuperdump&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ImageMagick bindings for Go</title>
+      <link>http://hgfischer.org/project/go-imagemagick/</link>
+      <pubDate>Sat, 10 Aug 2013 15:13:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/project/go-imagemagick/</guid>
+      <description>&lt;p&gt;A few months ago I&amp;rsquo;ve spent some days developing my first cgo binding and the chosen library was
+&lt;a href=&#34;http://www.imagemagick.org/script/magick-wand.php&#34;&gt;ImageMagick&amp;rsquo;s MagickWand&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It was an interesting experience. It&amp;rsquo;s relatively very easy to do such thing in Go. I&amp;rsquo;m still not using this binding in
+production and I hope someone can try it. I took care to port some examples from C to Go also, so that should be easier
+to start using it. And since ImageMagick is a huge library I was not able to test every function through the binding.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gographics/imagick&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gowalker.org/github.com/gographics/imagick/imagick&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Eclipse theme under Ubuntu</title>
+      <link>http://hgfischer.org/article/eclipse-theme-under-ubuntu-unity/</link>
+      <pubDate>Sat, 29 Oct 2011 11:41:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/article/eclipse-theme-under-ubuntu-unity/</guid>
+      <description>&lt;p&gt;Looks like there are a lot of complaints about Eclipse look-and-feel under Ubuntu Unity (10.10 and 11.04). The main
+problem is that there are a few inconsistencies with default Eclipse coloring and Ubuntu system colors. Some interface
+objects have low color contrast, like tooltips and selection lists.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve found a few solutions on the web to this problem, but none solved the whole problem. Some suggested to edit a file
+and force a color only to tooltips but this is counter-productive because tooltips are not the only object with color
+problems in this situation.&lt;/p&gt;
+
+&lt;p&gt;So, if you don&amp;rsquo;t mind having to change all colors in your Ubuntu, I&amp;rsquo;ve found out a simple solution to the problem.
+Install gtk-chtheme, open it and choose a theme that works better with Unity theme. I&amp;rsquo;ve found out that the Human theme
+works very well.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install gtk-chtheme
+$ gtk-chtheme
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See ya!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dicas de seguranca para usuários Windows</title>
+      <link>http://hgfischer.org/artigo/dicas-seguranca-windows/</link>
+      <pubDate>Wed, 09 Feb 2011 21:41:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/dicas-seguranca-windows/</guid>
+      <description>&lt;p&gt;Como a grande maioria dos geeks de computador, eu tenho alguns amigos e familiares que são leigos na maioria dos
+assuntos relacionados ao dito PC e estes sempre possuem aquele medo de pegar alguma virose digital. Foi então que uma
+amiga me pediu uma recomendação de um bom antivírus para ela utilizar.&lt;/p&gt;
+
+&lt;p&gt;Como eu não sou usuário de Windows muito menos de antivírus há alguns anos e, inspirado pela vontade de escrever a
+explicação &amp;ldquo;definitiva&amp;rdquo; para meus amigos leigos, com o benefício de não ter que repetir a mesma resposta diversas
+vezes, acabei escrevendo Das dicas abaixo:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Mantenha o Windows sempre atualizado! Se você não pode porque está usando um Windows pirata, eu sinto muito. Apesar
+de haver formas de você conseguir fazer as atualizações, a chance de pegar um vírus é muito grande e é bom instalar
+todos os antivírus existentes no mercado com o risco de não conseguir usar o computador para mais nada.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Mantenha seus programas sempre em dia com suas respectivas atualizações de segurança.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Não confie cegamente em emails pois estes podem ter seu remetente forjado. Se receber algum email contendo seu nome
+e CPF, isso não significa que a fonte é confiável. Hoje em dia é possível comprar dados privados de qualquer um no
+mercado negro, graças à &lt;del&gt;excelente&lt;/del&gt; segurança dos sistemas de nossos órgãos governamentais (DETRAN, Fazenda,
+etc).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Se o email faz alarde e pede que você clique em algum lugar, suspeite e em caso de suspeita, tire a dúvida com a
+instituição que foi forjada no e-mail. Ex.: Se você recebeu e-mail de um Banco onde você tem conta, com seu nome e
+CPF, sugerindo clicar em algum link, não clique. Entre em contato por telefone com o Banco para questionar a 
+veracidade do email. Provavelmente o banco lhe pedirá que você lhes encaminhe o email suspeito como anexo para que
+este possa ser analisado e utilizado em investigações de crime digital.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Seja mais crítico com os links que você pretende clicar. Veja o endereço do remetente (além do nome). Ex.:
+&lt;code&gt;Atendimento Banco &amp;lt;atendimento_banco123@hotmail.com&amp;gt;&lt;/code&gt;. Notou o que está errado com este endereço? O banco não
+enviaria um e-mail com rementente do Hotmail.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Veja o real endereço para onde aponta link que você pretende clicar. Passe o mouse em cima do link e veja o endereço
+para onde ele aponta na barra de status do seu navegador ou software de e-mail. Senão, utilize a função
+&amp;ldquo;Copiar endereço do link&amp;rdquo; e cole num editor qualquer para vê-lo. Muitos tentam enganar mostrando um endereço falso
+para onde o link não aponta. Por exemplo: No corpo do e-mail está como &amp;ldquo;Clique aqui&amp;rdquo; ou 
+&lt;a href=&#34;http://algum.site.invadido/banco/atendimento/&#34;&gt;www.banco.com/trocadesenha&lt;/a&gt; e quando você passa o mouse
+no link vê que o endereço de destino é &lt;a href=&#34;http://algum.site.invadido/site-falso-do-banco/atendimento/&#34;&gt;http://algum.site.invadido/site-falso-do-banco/atendimento/&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Muitos links levam navegadores à fazer downloads. Se você não esperava um download, melhor não abrir o arquivo.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Não instale programas de fontes desconhecidas. Se for baixar algum programa, procure baixar diretamente do site do
+fornecedor do programa.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Pirataria provavelmente é a principal fonte de problemas com programas maliciosos (vírus, trojans, etc). Se não puder
+evitar, é bom arrumar um bom antivírus pois até um inocente arquivo PDF pode ser malicioso.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Se puder, use Linux. A mudança pode ser um pouco difícil no começo, mas compensa. Para os novatos no assunto,
+recomendo o &lt;a href=&#34;http://www.ubuntu.com&#34;&gt;Ubuntu Linux&lt;/a&gt;. Se você tem &lt;em&gt;muito&lt;/em&gt; dinheiro sobrando, pode arriscar comprar um
+&lt;a href=&#34;http://www.apple.com.br&#34;&gt;Mac&lt;/a&gt;. Ambos sistemas não estão totalmente imunes à problemas de segurança, mas alvos bem
+menores de hackers do que o Windows.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Estas são minhas regrinhas básicas de segurança. Se tiver alguma sugestão, contribua nos comentários&amp;hellip; ;-)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Extraíndo arquivos de um RPM</title>
+      <link>http://hgfischer.org/artigo/extraindo-arquivos-rpm/</link>
+      <pubDate>Mon, 03 Jan 2011 11:03:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/extraindo-arquivos-rpm/</guid>
+      <description>&lt;p&gt;Já me deparei com situações em que precisava de algum arquivo existente dentro de um RPM mas não queria instalá-lo.&lt;/p&gt;
+
+&lt;p&gt;A solução é extrair o conteúdo do RPM, só que o comando RPM não tem nenhuma opção padrão para fazer isto. É necessário
+então utilizar outras ferramentas.&lt;/p&gt;
+
+&lt;p&gt;Para fazer isto, basta utilizar o comando abaixo, substituindo o &amp;ldquo;arquivo.rpm&amp;rdquo; pelo nome do seu arquivo RPM:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rpm2cpio arquivo.rpm | cpio -vdim
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Alternando a saída de som no Mac</title>
+      <link>http://hgfischer.org/artigo/alternando-saida-som-mac/</link>
+      <pubDate>Wed, 03 Nov 2010 10:53:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/alternando-saida-som-mac/</guid>
+      <description>&lt;p&gt;Utilizo um headset USB em casa para ouvir som e fazer ligações com Skype. Este tipo específico de headset
+aparece como um dispositivo separado de saída e entrada de som e tenho que trocar a saída padrão de som por ele.&lt;/p&gt;
+
+&lt;p&gt;O jeito tradicional e óbvio de selecionar as saídas e entradas de som no Mac é através do &lt;strong&gt;System Preferences&lt;/strong&gt;  só
+que este método é lento.&lt;/p&gt;
+
+&lt;p&gt;Mas existe um jeito rápido e prático de alterar estas configurações. Basta segurar o botão &lt;strong&gt;Alt/Option&lt;/strong&gt; e clicar no
+ícone do auto-falante na barra de menus do Mac. Ali aparecerá uma lista de dispositivos de entrada e saída de som que
+podem ser rapidamente alterados.&lt;/p&gt;
+
+&lt;p&gt;É isso&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Script para embutir legendas em arquivos MKV</title>
+      <link>http://hgfischer.org/artigo/script-embutir-legendas-mkv/</link>
+      <pubDate>Thu, 15 Jul 2010 08:32:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/script-embutir-legendas-mkv/</guid>
+      <description>&lt;p&gt;Já faz algum tempo que o VLC para Mac não carrega as legendas automaticamente. Nem a última versão 1.1.0 faz isso mais.
+E o Mkvtoolnix não é muito prático para utilizar com muitos arquivos, para juntar filmes e legendas. Foi por este
+motivo que resolvi fazer um pequeno script que utiliza o mkvmerge que acompanha o próprio Mkvtoolnix para automatizar
+a inclusão de legendas em filmes.&lt;/p&gt;
+
+&lt;p&gt;Ele está bem simples e é recomendado para aqueles que tem algum conhecimento de shell scripts. Ele pode ser facilmente
+utilizado em Linux também, possivelmente sem nenhuma necessidade de adaptação.&lt;/p&gt;
+
+&lt;p&gt;O padrão de funcionamento é o seguinte:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;O script deve estar no mesmo diretório dos arquivos MKV e SRT.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Os arquivos MKV e suas respectivas legendas SRT devem ter o mesmo nome de arquivo (ignorando-se a extensão).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Eu fiz o script para juntar legendas em português. Caso a legenda seja em outro idioma, ajuste o trecho do comando &lt;code&gt;--language 0:por&lt;/code&gt; para o idioma correto. Para saber qual o código correto do idioma, utilize o comando &lt;code&gt;mkvmerge --list-languages&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Com pouca adaptação é possível melhorar o script para rodar de qualquer diretório, ser mais inteligente em achar
+legendas, etc., mas o meu problema este aqui já foi suficiente para resolver.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+export IFS=$&#39;\t\n&#39;
+for mkv in `ls -1 *.mkv`
+do
+	bname=`basename -s &#39;.mkv&#39; $mkv`
+	srt=`echo &amp;quot;${bname}.srt&amp;quot;`
+	newmkv=`echo &amp;quot;${bname}.MERGED.mkv&amp;quot;`
+
+	mkvmerge -o &amp;quot;$newmkv&amp;quot; &amp;quot;$mkv&amp;quot; \
+		--sub-charset 0:ISO-8859-1 --language 0:por --default-track 0:yes &amp;quot;$srt&amp;quot; \
+		--track-order 0:1,0:2,1:0
+		
+	mv &amp;quot;$mkv&amp;quot; ~/.Trash/
+	mv &amp;quot;$srt&amp;quot; ~/.Trash/
+done
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ejetando CDS e DVDS presos em seu Mac</title>
+      <link>http://hgfischer.org/artigo/ejetando-cds-dvds-presos-mac/</link>
+      <pubDate>Sat, 09 Jan 2010 12:04:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/ejetando-cds-dvds-presos-mac/</guid>
+      <description>&lt;p&gt;Eventualmente CDs e DVDs danificados ficam presos no drive de um Mac e este não consegue ejetá-los.&lt;/p&gt;
+
+&lt;p&gt;Isto acontece porque o Mac OS X fica tentando ler as mídias e não consegue. Enquanto ele ficar tentando, ele não ejeta
+a mídia. Este problema já me ocorreu algumas vezes, principalmente após uma sessão de gravação mal sucedida por conta
+de mídia de baixa qualidade ou riscada.&lt;/p&gt;
+
+&lt;p&gt;Fuçando na interwebs encontrei os comandos abaixo que podem ser utilizados para resolver este problema, sem precisar
+reiniciar o Mac.&lt;/p&gt;
+
+&lt;p&gt;Abra o Terminal e digite os comandos a seguir:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ drutil open
+$ drutil eject
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Se após alguns segundos a mídia não for ejetada com sucesso, tente as seguintes combinações de teclas de atalho:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Option + Eject&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;Shift + Command + E&lt;/kbd&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Se mesmo assim ainda não funcionar, tente pressionar &lt;kbd&gt;ESC + Eject&lt;/kbd&gt; logo após a música de boot, após
+reinicializar o Mac.&lt;/p&gt;
+
+&lt;p&gt;E se mesmo assim nada funcionar, desculpe, mas é melhor procurar um profissional.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cidade Flutuante</title>
+      <link>http://hgfischer.org/artigo/cidade-flutuante/</link>
+      <pubDate>Sat, 21 Nov 2009 18:37:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/cidade-flutuante/</guid>
+      <description>&lt;p&gt;Este é o primeiro trabalho gráfico que desenvolvi junto com minha esposa e utilizando apenas fotos (nada de 3D como
+nos anteriores). Utilizamos uma foto do &lt;a href=&#34;http://en.wikipedia.org/wiki/Mont_Saint-Michel&#34;&gt;Mt. St. Michel&lt;/a&gt; na França e
+uma foto de montanhas dos Estados Unidos para compor o elemento principal. Também utilizamos uma foto de nuvens e
+algumas &lt;em&gt;brushes&lt;/em&gt; para compor o restante da cena.&lt;/p&gt;
+
+&lt;figure &gt;
+    
+	&lt;img class=&#34;img-thumbnail img-responsive&#34;
+		src=&#34;/media/cidade-flutuante-by-herbert-e-ester.jpg&#34; 
+		alt=&#34;Cidade Flutuante&#34; &gt;
+	 
+	
+	&lt;figcaption&gt;
+		
+		&lt;p&gt;
+        Cidade Flutuante 
+        
+        
+        &lt;/p&gt;
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Separadores no Bash</title>
+      <link>http://hgfischer.org/artigo/separadores-bash/</link>
+      <pubDate>Mon, 02 Nov 2009 11:41:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/separadores-bash/</guid>
+      <description>&lt;p&gt;Quantas vezes já foi obrigado a refazer um script em outra linguagem quando se deparou com um &lt;em&gt;for&lt;/em&gt; que recebia valores
+com espaços e não sabia como resolver isto diretamente no Bash?&lt;/p&gt;
+
+&lt;p&gt;Eu mesmo já fiz isto algumas vezes. Mesmo quando sabia que era possível consertar o problema no próprio Bash eu acabava
+partindo para o novo script pois encontrava um pouco de dificuldade de encontrar documentação sobre isto. O manual do
+Bash não ajuda muito na forma correta de se configurar a variável IFS.&lt;/p&gt;
+
+&lt;p&gt;IFS (Internal Field Separator) é uma variável que permite configurar quais são os caracteres que o Bash considera serem
+separadores de campos. E é com o IFS que o loop for sabe separar os itens dentro de uma string ou dentre várias linhas.&lt;/p&gt;
+
+&lt;p&gt;O IFS padrão é configurado para separar campos com espaços, tabulações e linhas.&lt;/p&gt;
+
+&lt;p&gt;Para alterar o valor do IFS para não separar campos com espaços, basta utilizar o comando abaixo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ export IFS=$&#39;\t\n&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Agora quando quiser efetuar alguma tarefa numa lista de arquivos que tem espaços em seu nome, não terá problemas. Veja
+o exemplo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export IFS=$&#39;\t\n&#39;
+for f in `ls -1`
+do
+    echo $f
+done
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Agenda dos Criadores, Agenda dos Administradores</title>
+      <link>http://hgfischer.org/artigo/agenda-criadores-agenda-administradores/</link>
+      <pubDate>Tue, 04 Aug 2009 17:16:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/agenda-criadores-agenda-administradores/</guid>
+      <description>
+
+&lt;p&gt;Tradução do texto &lt;a href=&#34;http://www.paulgraham.com/makersschedule.html&#34;&gt;Maker&amp;rsquo;s Schedule, Manager&amp;rsquo;s Schedule&lt;/a&gt; do Paul Graham.
+A tradução não é 100% fiel ao texto original. Procurei adequar o texto à nossa cultura para melhor compreensão. Alguns
+termos e frases poderiam ter tradução estranha ou ambígua, portanto tentei utilizar os termos que melhor se adequavam
+ao contexto.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Nota do tradutor&lt;/strong&gt;: O termo &lt;em&gt;Maker&lt;/em&gt; utilizado no original significa aquele que faz e de forma abrangente é aquele que
+inventivamente e criativamente faz uma tarefa que exige grande concentração. Por falta de um termos mais adequado ao
+significado abrangente, utilizei aqui o palavra &lt;em&gt;Criador&lt;/em&gt;, sem conotações religiosas, como aquele que precisa inventar
+ou criar soluções, textos, algoritmos, ou qualquer outro tipo de trabalho criativo e que exige inspiração.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;agenda-dos-criadores-agenda-dos-administradores&#34;&gt;Agenda dos Criadores, Agenda dos Administradores&lt;/h2&gt;
+
+&lt;p&gt;Uma razão pelo qual os criadores não gostam muito de reuniões é que eles estão num ritmo diferente das outras pessoas.
+Reuniões lhes custam mais.&lt;/p&gt;
+
+&lt;p&gt;Existem dois tipos de horário, as quais eu chamarei de horário do administrador e horário do criador. O horário do
+administrador é para chefes. Ele está consubstanciado no tradicional livro de compromissos, com cada dia sendo cortado
+em intervalos de uma hora. Pode-se bloquear diversas horas para uma única tarefa, se necessitar, mas por padrão muda-se
+o que está fazendo a cada hora.&lt;/p&gt;
+
+&lt;p&gt;Quando você utiliza o tempo desta forma, é meramente um problema prático encontrar-se com alguém. Encontrar um horário
+vago em sua agenda, reservá-lo, e pronto.&lt;/p&gt;
+
+&lt;p&gt;A maioria das pessoas poderosas estão no horário do administrador. É o horário do comando. Mas há outra forma de
+utilizar o tempo que é comum entre pessoas que criam coisas, como programadores ou escritores. Geralmente eles preferem
+utilizar o tempo em unidades de meio-período, pelo menos. Você não pode escrever ou programar bem em unidades de hora.
+Isto mal é tempo suficiente para começar.&lt;/p&gt;
+
+&lt;p&gt;Quando se está operando no horário do criador, reuniões são um desastre. Uma única reunião pode acabar com a tarde toda
+por quebrá-la em dois pedaços sendo cada uma muito pequena para fazer algo complexo. Além disso você deve lembrar de ir
+à reunião. Isto não é problema para alguém no horário do administrador. Sempre há algo diferente ocorrendo na próxima
+hora; a única questão é o quê. Mas quando algum criador tem uma reunião, ele deve raciocinar a respeito desta.&lt;/p&gt;
+
+&lt;p&gt;Para o criador, ter uma reunião é como lançar uma exceção. Ele não só meramente faz você alternar de uma tarefa à
+outra; ele muda a forma na qual você trabalha.&lt;/p&gt;
+
+&lt;p&gt;Eu percebo que uma reunião afeta o dia todo. Uma reunião normalmente acaba com no mínimo metade do dia, por quebrar uma
+manhã ou uma tarde. Além disto há eventualmente um efeito cascata. Se sei que a tarde será quebrada, é ligeiramente
+menos provável que inicie algo ambicioso na manhã. Sei que isto pode soar hipersensível, mas se você é um criador,
+pense em seu próprio caso. Você não acorda pela manhã com o pensamento de que terá o dia todo livre para trabalhar, com
+nenhuma reunião marcada? Bem, isso significa que você ficará igualmente deprimido quando do contrário. E projetos
+ambiciosos são por definição próximos do limite de sua capacidade. Uma pequena redução na moral é suficiente para
+matá-los.&lt;/p&gt;
+
+&lt;p&gt;Cada tipo de horário funciona bem por si só. Problemas surgem quando os tipos se encontram. Como a maioria dos poderosos
+operam no horário do administrador, eles estão na posição para fazer todos ressoarem em sua frequência, caso queiram.
+Mas os mais espertos restringem-se, se souberem que algumas das pessoas trabalhando para eles precisam de longos
+períodos contíguos de tempo para trabalhar.&lt;/p&gt;
+
+&lt;p&gt;Nosso caso é um pouco incomum. Quase todos os investidores, incluindo todos os VCs que conheço, operam no horário do
+administrador. Mas a &lt;a href=&#34;http://ycombinator.com/&#34;&gt;Y Combinator&lt;/a&gt; funciona no horário do criador. Rtm, Trevor e eu o fazemos
+porque sempre fizemos, e Jessica faz também, principalmente, porque ela está em sincronia conosco.&lt;/p&gt;
+
+&lt;p&gt;Eu não ficaria surpreso se mais empresas começassem a ser como nós. Suspeito que os fundadores podem ser cada vez mais
+capazes de resistir, ou ao menos procrastinar, a sua própria transformação em gerentes, assim como à poucas décadas
+atrás eles passaram a ser capazes de resistir à troca do jeans pelos ternos.&lt;/p&gt;
+
+&lt;p&gt;Como nós fazemos para aconselhar muitas startups a utilizar o horário do criador? Utilizamos a ferramenta clássica para
+simular o horário do administrador dentro do horário do criador: horas de escritório. Diversas vezes por semana eu
+separo algumas horas para me encontrar com os fundadores que nós financiamos. Estas horas estão no final do meu dia de
+trabalho. Também escrevi um programa de assinaturas que garante que todos os compromissos dentro de um dado conjunto de
+horas do escritório estão agregados no final. Como elas vêm ao final do meu dia, reuniões nunca são uma interrupção.
+(A menos que o expediente deles termine ao mesmo tempo que o meu, a reunião presumidamente interromperá o deles, mas
+desde que eles criaram o compromisso isto deve valer a pena para eles). Durante períodos ocupados, as horas de
+escritório geralmente ficam longas o suficiente ao ponto de comprimir o dia, mas elas nunca o interrompem.&lt;/p&gt;
+
+&lt;p&gt;Quando nós estávamos trabalhando em nossa própria startup, na década de 90, evoluí outro truque para particionamento
+do dia. Eu costumava programar do jantar até cerca de 3 horas da manhã todos os dias, porque durante a noite ninguém
+poderia me interromper. Então eu dormia até cerca das 11 horas da manhã, e vinha e trabalhava até o jantar no que eu
+chamava de &amp;ldquo;negócios&amp;rdquo;. Eu nunca pensei nestes termos, mas em efeito eu tinha dois expedientes por dia, um no horário
+do administrador e um no horário do criador.&lt;/p&gt;
+
+&lt;p&gt;Quando se está operando no horário do administrador você pode fazer algo que você nunca quer fazer no horário do
+criador: você pode ter reuniões especulativas. Você pode encontrar alguém somente para se conhecerem. Se você tem um
+espaço vazio em sua agenda, porque não? Talvez vocês possam se ajudar de alguma forma.&lt;/p&gt;
+
+&lt;p&gt;Pessoas de negócios no Vale do Silício (e em todo o mundo) têm reuniões especulativas todo o tempo. Eles estão
+efetivamente livres se você está no horário do administrador. Estes são tão comuns que há até uma linguagem distinta
+para propô-las: dizendo que você quer &amp;ldquo;tomar um café&amp;rdquo;, por exemplo.&lt;/p&gt;
+
+&lt;p&gt;Entretanto encontros especulativos são terrivelmente onerosos se você está no horário do criador. O que nos coloca em
+uma espécie de vínculo. Todos assumem que, como outros investidores, nós utilizamos o horário do administrador. Então
+eles nos introduzem para algo que pensam que nós devemos cumprir, ou nos enviam um e-mail propondo um café. Neste ponto
+nós temos duas opções, nenhuma delas boa: nos encontramos com eles, e perdemos metade de um dia de trabalho; ou tentamos
+evitar o encontro com eles, e provavelmente ofendê-los.&lt;/p&gt;
+
+&lt;p&gt;Até recentemente não estava claro em nossas mentes qual era a origem do problema. Nós somente presumimos que tínhamos
+que igualmente explodir nossos horários ou ofender as pessoas. Mas agora que percebi o que está acontecendo, talvez
+exista uma terceira opção: escrever algo explicando os dois tipos de horário. Talvez eventualmente, se o conflito entre
+o horário do administrador e o horário do criador passe a ser largamente compreendido, isto será menos do que um
+problema.&lt;/p&gt;
+
+&lt;p&gt;Aqueles de nós que estão no horário do criador estão dispostos a se comprometer. Nós sabemos que devemos ter algumas
+das reuniões. Tudo o que perguntamos daqueles que estão no horário do administrador é que eles compreendam o custo.&lt;/p&gt;
+
+&lt;h4 id=&#34;agradecimentos&#34;&gt;Agradecimentos&lt;/h4&gt;
+
+&lt;p&gt;À Sam Altman, Trevor Blackwell, Paul Buchheit, Jessica Livingston, and Robert Morris por lerem rascunhos deste texto.&lt;/p&gt;
+
+&lt;h4 id=&#34;veja-também&#34;&gt;Veja também:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.paulgraham.com/love.html&#34;&gt;How to Do What You Love&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.paulgraham.com/procrastination.html&#34;&gt;Good and Bad Procrastination&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

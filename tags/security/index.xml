@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Memory Leak</title>
+    <link>http://hgfischer.org/tags/security/</link>
+    <description>Recent content in Security on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 20 Nov 2014 22:12:13 -0200</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Go-OTP</title>
+      <link>http://hgfischer.org/project/go-otp/</link>
+      <pubDate>Thu, 20 Nov 2014 22:12:13 -0200</pubDate>
+      
+      <guid>http://hgfischer.org/project/go-otp/</guid>
+      <description>&lt;p&gt;Package go-otp implements one-time-password generators used in 2-factor authentication systems like RSA-tokens.
+Currently this supports both HOTP (RFC-4226) and TOTP (RFC-6238).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hgfischer/go-otp&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://godoc.org/github.com/hgfischer/go-otp&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MySQL Super Dump</title>
+      <link>http://hgfischer.org/project/mysqlsuperdump/</link>
+      <pubDate>Sat, 10 Aug 2013 15:19:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/project/mysqlsuperdump/</guid>
+      <description>&lt;p&gt;The following text is fiction based on a true story, but it can happen with lots of development teams over the world:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Once upon a time there was a development team that liked to use dumps from the production database in their
+development environments to have the same content and behavior of the production system in their machines.
+To avoid security problems, the system administrator created a script to dump the production database, import in a
+temporary database, then replace all sensitive data, like salts, passwords, customer names, emails, etc, for fake
+data, then export a dump of this temporary database to a file that is the dump developers would use.
+However this script was taking more time to run, day by day, and each day it was using more resources from the
+server to run, until it exploded!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Based on this true story I&amp;rsquo;ve decided to make a program to solve this problem. The first version was made in Python 2.7
+in a few hours, but I got trapped in text encoding problems of Python and MySQLdb library. So I&amp;rsquo;ve decided to rewrite
+it using Go.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hgfischer/mysqlsuperdump&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dicas de seguranca para usuários Windows</title>
+      <link>http://hgfischer.org/artigo/dicas-seguranca-windows/</link>
+      <pubDate>Wed, 09 Feb 2011 21:41:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/dicas-seguranca-windows/</guid>
+      <description>&lt;p&gt;Como a grande maioria dos geeks de computador, eu tenho alguns amigos e familiares que são leigos na maioria dos
+assuntos relacionados ao dito PC e estes sempre possuem aquele medo de pegar alguma virose digital. Foi então que uma
+amiga me pediu uma recomendação de um bom antivírus para ela utilizar.&lt;/p&gt;
+
+&lt;p&gt;Como eu não sou usuário de Windows muito menos de antivírus há alguns anos e, inspirado pela vontade de escrever a
+explicação &amp;ldquo;definitiva&amp;rdquo; para meus amigos leigos, com o benefício de não ter que repetir a mesma resposta diversas
+vezes, acabei escrevendo Das dicas abaixo:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Mantenha o Windows sempre atualizado! Se você não pode porque está usando um Windows pirata, eu sinto muito. Apesar
+de haver formas de você conseguir fazer as atualizações, a chance de pegar um vírus é muito grande e é bom instalar
+todos os antivírus existentes no mercado com o risco de não conseguir usar o computador para mais nada.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Mantenha seus programas sempre em dia com suas respectivas atualizações de segurança.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Não confie cegamente em emails pois estes podem ter seu remetente forjado. Se receber algum email contendo seu nome
+e CPF, isso não significa que a fonte é confiável. Hoje em dia é possível comprar dados privados de qualquer um no
+mercado negro, graças à &lt;del&gt;excelente&lt;/del&gt; segurança dos sistemas de nossos órgãos governamentais (DETRAN, Fazenda,
+etc).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Se o email faz alarde e pede que você clique em algum lugar, suspeite e em caso de suspeita, tire a dúvida com a
+instituição que foi forjada no e-mail. Ex.: Se você recebeu e-mail de um Banco onde você tem conta, com seu nome e
+CPF, sugerindo clicar em algum link, não clique. Entre em contato por telefone com o Banco para questionar a 
+veracidade do email. Provavelmente o banco lhe pedirá que você lhes encaminhe o email suspeito como anexo para que
+este possa ser analisado e utilizado em investigações de crime digital.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Seja mais crítico com os links que você pretende clicar. Veja o endereço do remetente (além do nome). Ex.:
+&lt;code&gt;Atendimento Banco &amp;lt;atendimento_banco123@hotmail.com&amp;gt;&lt;/code&gt;. Notou o que está errado com este endereço? O banco não
+enviaria um e-mail com rementente do Hotmail.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Veja o real endereço para onde aponta link que você pretende clicar. Passe o mouse em cima do link e veja o endereço
+para onde ele aponta na barra de status do seu navegador ou software de e-mail. Senão, utilize a função
+&amp;ldquo;Copiar endereço do link&amp;rdquo; e cole num editor qualquer para vê-lo. Muitos tentam enganar mostrando um endereço falso
+para onde o link não aponta. Por exemplo: No corpo do e-mail está como &amp;ldquo;Clique aqui&amp;rdquo; ou 
+&lt;a href=&#34;http://algum.site.invadido/banco/atendimento/&#34;&gt;www.banco.com/trocadesenha&lt;/a&gt; e quando você passa o mouse
+no link vê que o endereço de destino é &lt;a href=&#34;http://algum.site.invadido/site-falso-do-banco/atendimento/&#34;&gt;http://algum.site.invadido/site-falso-do-banco/atendimento/&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Muitos links levam navegadores à fazer downloads. Se você não esperava um download, melhor não abrir o arquivo.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Não instale programas de fontes desconhecidas. Se for baixar algum programa, procure baixar diretamente do site do
+fornecedor do programa.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Pirataria provavelmente é a principal fonte de problemas com programas maliciosos (vírus, trojans, etc). Se não puder
+evitar, é bom arrumar um bom antivírus pois até um inocente arquivo PDF pode ser malicioso.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Se puder, use Linux. A mudança pode ser um pouco difícil no começo, mas compensa. Para os novatos no assunto,
+recomendo o &lt;a href=&#34;http://www.ubuntu.com&#34;&gt;Ubuntu Linux&lt;/a&gt;. Se você tem &lt;em&gt;muito&lt;/em&gt; dinheiro sobrando, pode arriscar comprar um
+&lt;a href=&#34;http://www.apple.com.br&#34;&gt;Mac&lt;/a&gt;. Ambos sistemas não estão totalmente imunes à problemas de segurança, mas alvos bem
+menores de hackers do que o Windows.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Estas são minhas regrinhas básicas de segurança. Se tiver alguma sugestão, contribua nos comentários&amp;hellip; ;-)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

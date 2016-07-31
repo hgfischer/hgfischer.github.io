@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac Os X on Memory Leak</title>
+    <link>http://hgfischer.org/tags/mac-os-x/</link>
+    <description>Recent content in Mac Os X on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 22 Nov 2014 21:08:56 -0200</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/mac-os-x/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Do Mac para o Linux</title>
+      <link>http://hgfischer.org/artigo/do-mac-para-o-linux/</link>
+      <pubDate>Sat, 22 Nov 2014 21:08:56 -0200</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/do-mac-para-o-linux/</guid>
+      <description>
+
+&lt;p&gt;Eu voltei do mundo Mac para o mundo Linux no início de 2013 quando meu velho Macbook Pro 2008 começou a ficar
+ultrapassado. Lembro de passar uns maus bocados tentando abrir as fotos que estava tirando com minha câmera digital nele.&lt;/p&gt;
+
+&lt;p&gt;Sou usuário Linux desde a época em que se comprava revistas que vinham com CD do Conectiva Guarani. Naquela época era
+comum utilizar um &lt;em&gt;dual-boot&lt;/em&gt; com Windows, pois o Linux não era capaz de substituir a maioria das funções de um PC
+Windows. Nesta mesma época Macintosh era equipamento utilizado apenas em algumas agências de publicidade e estúdios de
+computação gráfica, como uma opção &amp;ldquo;acessível&amp;rdquo; às caríssimas estações da Silicon Graphics.&lt;/p&gt;
+
+&lt;p&gt;Eu só virei usuário Mac em 2009 quando fui influenciado pela comunidade de programadores que viam o equipamento como a
+melhor ferramenta, combinando uma plataforma estável e bonita, bons softwares comerciais (Textmate, Keynote, etc) com
+características da plataforma Unix. Isto ainda é factível, tirando algumas peculiaridades, como a falta de um gerenciador
+de pacotes confiável (MacPorts e Homebrew são horríveis) e os problemas com algumas tecnologias (ex.: Java), o que mais
+me incomoda é o alto custo.&lt;/p&gt;
+
+&lt;p&gt;Antes de desistir do Mac cheguei até a montar um Hackintosh caseiro, com 4x mais RAM e uma CPU mais recente, pra dar
+conta do trabalho pesado com fotos e vídeos. O projeto até que funcionou, de um certo modo. Era estável, mas não podia
+sequer pensar em fazer updates do sistema operacional, algo que me incomodava muito principalmente no quesito segurança.
+No final o Hackintosh virou um desktop Windows e o Steam nele virou &amp;ldquo;fumaça&amp;rdquo;, pois a falta de tempo e ânimo para jogar
+eram bem mais &amp;ldquo;sólidos&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Resolvi então trocar meu velho notebook por um que atendesse minhas necessidades. Muito espaço em disco, muita RAM e a
+melhor CPU que o melhor custo/benefício pudesse encontrar. Pesquisar Macs com estas características aqui no Brasil é uma
+tarefa desanimadora. Na época, lembro que um Macbook Pro Core i5 com 4GB de RAM e 500GB de HD custava algo em torno de
+R$4000 nas lojas que vendiam com Nota Fiscal. Enquanto isso, era fácil encontrar notebooks Windows com processadores
+Intel Core i7, 1TB de HD, BlueRay, 8GB de RAM, etc, por menos de R$2700. Como a grana estava curta, achei que valia a
+pena reconsiderar as outras opções.&lt;/p&gt;
+
+&lt;p&gt;Dado todo o background, não foi difícil voltar ao mundo Linux. Adquiri um notebook da Samsung top-de-linha por &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; do
+preço de um Macbook equivalente em termos de CPU, RAM e HD. Óbviamente os Macs são muito melhores em outros quesitos,
+como resistência, material, tela, gabinete, etc, mas isto tudo é secundário quando se precisa de alto custo/benefício.&lt;/p&gt;
+
+&lt;p&gt;Desde que retornei ao Linux, outros acontecimentos importantes corroborarm minha decisão:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Docker fundou um novo tipo de &lt;em&gt;cloud computing&lt;/em&gt; e é baseado em Linux. Desenvolvedores que utilizam Macs são obrigados
+a virtualizar Linux dentro de seus Macs para rodar Docker;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;NSA é revelada ao mundo como o Big Brother, inclusive com relações com grandes empresas incluindo a Apple;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Últimas versões do Mac OS X estão apresentando muitos problemas;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Apple seguindo para um modelo de hardware totalmente fechado e que não aceita upgrades;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;finalizando&#34;&gt;Finalizando&lt;/h2&gt;
+
+&lt;p&gt;Claro que nem tudo é perfeito. Ainda surgem problemas de estabilidade nas diferentes distribuições Linux, mas eu já
+aprendi a contornar o problema. Tenho um mecanismo eficiente de sincronia de arquivos como backup e automatizei todo o
+setup dos meus computadores Linux com Puppet. Desta forma não preciso hesitar muito em reinstalar o Linux ou atualizá-lo
+para uma versão mais nova.&lt;/p&gt;
+
+&lt;p&gt;Alias, este ano fiz um upgrade no meu notebook. Coloquei um SSD e o HD antigo entrou no lugar do BlueRay que praticamente
+não tem mais utilidade para mim. Fazer isto nos Macbooks mais novos, onde tudo é soldado na placa-mãe, é impossível.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Alternando a saída de som no Mac</title>
+      <link>http://hgfischer.org/artigo/alternando-saida-som-mac/</link>
+      <pubDate>Wed, 03 Nov 2010 10:53:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/alternando-saida-som-mac/</guid>
+      <description>&lt;p&gt;Utilizo um headset USB em casa para ouvir som e fazer ligações com Skype. Este tipo específico de headset
+aparece como um dispositivo separado de saída e entrada de som e tenho que trocar a saída padrão de som por ele.&lt;/p&gt;
+
+&lt;p&gt;O jeito tradicional e óbvio de selecionar as saídas e entradas de som no Mac é através do &lt;strong&gt;System Preferences&lt;/strong&gt;  só
+que este método é lento.&lt;/p&gt;
+
+&lt;p&gt;Mas existe um jeito rápido e prático de alterar estas configurações. Basta segurar o botão &lt;strong&gt;Alt/Option&lt;/strong&gt; e clicar no
+ícone do auto-falante na barra de menus do Mac. Ali aparecerá uma lista de dispositivos de entrada e saída de som que
+podem ser rapidamente alterados.&lt;/p&gt;
+
+&lt;p&gt;É isso&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ejetando CDS e DVDS presos em seu Mac</title>
+      <link>http://hgfischer.org/artigo/ejetando-cds-dvds-presos-mac/</link>
+      <pubDate>Sat, 09 Jan 2010 12:04:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/ejetando-cds-dvds-presos-mac/</guid>
+      <description>&lt;p&gt;Eventualmente CDs e DVDs danificados ficam presos no drive de um Mac e este não consegue ejetá-los.&lt;/p&gt;
+
+&lt;p&gt;Isto acontece porque o Mac OS X fica tentando ler as mídias e não consegue. Enquanto ele ficar tentando, ele não ejeta
+a mídia. Este problema já me ocorreu algumas vezes, principalmente após uma sessão de gravação mal sucedida por conta
+de mídia de baixa qualidade ou riscada.&lt;/p&gt;
+
+&lt;p&gt;Fuçando na interwebs encontrei os comandos abaixo que podem ser utilizados para resolver este problema, sem precisar
+reiniciar o Mac.&lt;/p&gt;
+
+&lt;p&gt;Abra o Terminal e digite os comandos a seguir:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ drutil open
+$ drutil eject
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Se após alguns segundos a mídia não for ejetada com sucesso, tente as seguintes combinações de teclas de atalho:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Option + Eject&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;Shift + Command + E&lt;/kbd&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Se mesmo assim ainda não funcionar, tente pressionar &lt;kbd&gt;ESC + Eject&lt;/kbd&gt; logo após a música de boot, após
+reinicializar o Mac.&lt;/p&gt;
+
+&lt;p&gt;E se mesmo assim nada funcionar, desculpe, mas é melhor procurar um profissional.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Netatalk DB_VERSION_MISMATCH</title>
+      <link>http://hgfischer.org/artigo/netatalk-db-version-mismatch/</link>
+      <pubDate>Mon, 29 Jun 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/netatalk-db-version-mismatch/</guid>
+      <description>&lt;p&gt;Recentemente me deparei com um mal comportamento do meu &amp;ldquo;Time Capsule&amp;rdquo; caseiro. Quando tentava acessar os
+compartilhamentos pelo Finder, ele não conseguia conectar.&lt;/p&gt;
+
+&lt;p&gt;Nos logs apareciam erros como este:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cnid_open: dbenv-&amp;gt;open (rw) of /Volumes/Storage/.AppleDB failed:
+DB_VERSION_MISMATCH: Database environment version mismatch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Foi então que percebi que na última atualização do Gentoo, o BerkeleyDB havia sido atualizado. O que fiz então foi
+recompilar o netatalk com o comando &lt;code&gt;emerge netatalk&lt;/code&gt; e depois remover os diretórios .AppleDB do storage:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# find /Volumes/Storage -name &#39;.AppleDB&#39; -exec rm -rfv {} \;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Isto resolveu o problema.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Erlang no Mac OS X Leopard</title>
+      <link>http://hgfischer.org/artigo/erlang-macosx-leopard/</link>
+      <pubDate>Sat, 04 Apr 2009 18:03:00 -0200</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/erlang-macosx-leopard/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://pt.wikipedia.org/wiki/Erlang_(linguagem_de_programa%C3%A7%C3%A3o)&#34;&gt;Erlang&lt;/a&gt; é uma
+&lt;a href=&#34;http://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_funcional&#34;&gt;linguagem de programação funcional&lt;/a&gt; criada pela Ericsson
+em 1987 que tem foco em concorrência, sistemas distribuídos e tolerância a falhas. Ultimamente vêm se tornando muito
+conhecida graças a seus recursos de concorrência e a &lt;a href=&#34;http://www.ddj.com/architect/184405990&#34;&gt;necessidade por tais facilidades&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para prosseguir com meus breves estudos de Erlang, resolvi instalá-lo no Mac. Considerei instalá-lo em uma máquina
+virtual VMware ou Parallels, mas isso envolveria a aquisição destes softwares. Além disso eu não estaria aproveitando
+100% do hardware para testar a capacidade do Erlang, sendo assim, preferi instalá-lo diretamente no &lt;em&gt;host&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Bom, vamos ao que interessa.&lt;/p&gt;
+
+&lt;h2 id=&#34;requisitos&#34;&gt;Requisitos&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Source do Erlang, encontrado &lt;a href=&#34;http://erlang.org/download.html&#34;&gt;aqui&lt;/a&gt;. Utilizei a versão R13A (17 Março 2009).
+É recomendado também efetuar o download da documentação em formato &lt;em&gt;man&lt;/em&gt;;&lt;/li&gt;
+&lt;li&gt;Apple Xcode 3, encontrado em &lt;a href=&#34;http://developer.apple.com/technology/xcode.html&#34;&gt;aqui&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;compilar-e-instalar&#34;&gt;Compilar e instalar&lt;/h2&gt;
+
+&lt;p&gt;Criei uma pasta dentro do &lt;code&gt;$HOME&lt;/code&gt; e deixei lá dentro tudo o que precisei para compilar o Erlang.&lt;/p&gt;
+
+&lt;p&gt;Os comandos abaixo estão de acordo com as versões que utilizei. Caso utilize uma versão diferente, faça as devidas
+alterações nos nomes de arquivos e diretórios. Caso descubra alguma particularidade da versão, fique à vontade para
+comentar no final deste artigo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ tar xvzf otp_src_R13A.tar.gz
+$ cd otp_src_R13A
+$ ./configure --enable-hipe --enable-smp-support --enable-threads
+$ make
+$ sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para testar o Erlang:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ erl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Você verá algo assim:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Erlang R13A (erts-5.7)
+[source][/source]
+[smp:2:2] [rq:2] [async-threads:0] [hipe] [kernel-poll:false] Eshell V5.7 (abort with ^G) 1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para sair pressione &lt;code&gt;Ctrl-C&lt;/code&gt;, escolha a opção &lt;em&gt;a&lt;/em&gt; e pressione &lt;em&gt;ENTER&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;BREAK: (a)bort (c)ontinue (p)roc info (i)nfo (l)oaded
+       (v)ersion (k)ill (D)b-tables (d)istribution
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;O caminho padrão de instalação é /usr/local. Caso queira utilizar outro prefixo, é necessário utilizar a
+opção &lt;code&gt;--prefix&lt;/code&gt; no comando configure.&lt;/p&gt;
+
+&lt;h2 id=&#34;documentação&#34;&gt;Documentação&lt;/h2&gt;
+
+&lt;p&gt;Para instalar a documentação em formato &lt;em&gt;man&lt;/em&gt;, utilize o seguinte comando:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo tar xvzf otp_doc_man_R13A.tar.gz -C /usr/local/share
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para testar a documentação:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ man erl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;testando&#34;&gt;Testando&lt;/h2&gt;
+
+&lt;p&gt;Para testar se o básico está funcionando, crie um arquivo chamado hello.erl com o código abaixo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-module(hello).
+-export([hello_werld/0]).
+
+hello_werld()-&amp;gt;
+	io:format(&amp;quot;Hello WErld ~n&amp;quot;).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para compilar e executar o teste:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ erl -compile hello
+$ erl -noshell -s hello hello_werld -s init stop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pronto! Já pode dominar o mundo Pink!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Todas as vozes do Mac</title>
+      <link>http://hgfischer.org/artigo/todas-vozes-mac/</link>
+      <pubDate>Mon, 30 Jun 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/todas-vozes-mac/</guid>
+      <description>&lt;p&gt;Quem já não perdeu um bom tempo fuçando no sintetizador de voz do Mac OS X?&lt;/p&gt;
+
+&lt;p&gt;Pra facilitar a vida de quem quer ver como é o sintetizador falar uma determinada frase com todos os timbres de voz,
+fiz o script abaixo. É só colocar num arquivo &lt;em&gt;plain-text&lt;/em&gt;, dar permissão de execução e rodar o comando com qualquer
+coisa como parâmetro que ele sairá falando.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+for i in `ls -1 /System/Library/Speech/Voices/`
+do
+    voice=`echo $i | cut -d. -f1 | sed &#39;s/\([a-z]\)\([A-Z]\)/\1 \2/g&#39;`
+    echo &amp;amp;quot;$voice is saying \&amp;amp;quot;$@\&amp;amp;quot;&amp;amp;quot;
+    say -v &amp;amp;quot;$voice&amp;amp;quot; &amp;amp;quot;$@&amp;amp;quot;
+done
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Exemplo de execução:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ./falatudo.sh Hello World
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

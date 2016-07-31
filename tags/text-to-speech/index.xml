@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Text To Speech on Memory Leak</title>
+    <link>http://hgfischer.org/tags/text-to-speech/</link>
+    <description>Recent content in Text To Speech on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Mon, 30 Jun 2008 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/text-to-speech/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Todas as vozes do Mac</title>
+      <link>http://hgfischer.org/artigo/todas-vozes-mac/</link>
+      <pubDate>Mon, 30 Jun 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/todas-vozes-mac/</guid>
+      <description>&lt;p&gt;Quem já não perdeu um bom tempo fuçando no sintetizador de voz do Mac OS X?&lt;/p&gt;
+
+&lt;p&gt;Pra facilitar a vida de quem quer ver como é o sintetizador falar uma determinada frase com todos os timbres de voz,
+fiz o script abaixo. É só colocar num arquivo &lt;em&gt;plain-text&lt;/em&gt;, dar permissão de execução e rodar o comando com qualquer
+coisa como parâmetro que ele sairá falando.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+for i in `ls -1 /System/Library/Speech/Voices/`
+do
+    voice=`echo $i | cut -d. -f1 | sed &#39;s/\([a-z]\)\([A-Z]\)/\1 \2/g&#39;`
+    echo &amp;amp;quot;$voice is saying \&amp;amp;quot;$@\&amp;amp;quot;&amp;amp;quot;
+    say -v &amp;amp;quot;$voice&amp;amp;quot; &amp;amp;quot;$@&amp;amp;quot;
+done
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Exemplo de execução:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ./falatudo.sh Hello World
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Screen on Memory Leak</title>
+    <link>http://hgfischer.org/tags/screen/</link>
+    <description>Recent content in Screen on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Mon, 08 Dec 2008 22:29:00 +0000</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/screen/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Barra de Status no GNU Screen</title>
+      <link>http://hgfischer.org/artigo/barra-status-gnu-screen/</link>
+      <pubDate>Mon, 08 Dec 2008 22:29:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/barra-status-gnu-screen/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.gnu.org/software/screen/&#34;&gt;GNU Screen&lt;/a&gt; é um gerenciador de terminais virtuais para a linha de comando. Seu
+uso em geral agiliza a administração remota de servidores pelo simples fato de ser necessário abrir apenas uma conexão
+SSH e através desta se pode ter vários terminais virtuais.&lt;/p&gt;
+
+&lt;p&gt;Uma outra vantagem em utilizar o GNU Screen, é deixar o gerenciador e retomá-lo sempre que precisar. Isso significa que
+você pode desconectar do servidor e deixar o gerenciador aberto com todas as &amp;ldquo;janelas&amp;rdquo; e processos rodando. Não só traz
+um benefício proposital, mas também pode salvar seu dia caso não tenha uma conexão estável com o servidor remoto.&lt;/p&gt;
+
+&lt;p&gt;Por estas e outras razões eu sempre utilizo GNU Screen quando possível (quando está instalado no servidor remoto).&lt;/p&gt;
+
+&lt;p&gt;No entanto por padrão ele não é muito amigável pois não exibe nenhuma informação na tela, sendo necessário utilizar
+atalhos de teclado para ver quais janelas estão abertas.&lt;/p&gt;
+
+&lt;p&gt;Após muito procurar, e isso já faz um bom tempo, consegui criar uma configuração padrão, para meus Screen. Esta exibe
+uma barra de informações na parte inferior da tela.&lt;/p&gt;
+
+&lt;p&gt;A configuração abaixo pode ser colocada no &lt;code&gt;/etc/screenrc&lt;/code&gt; ou no &lt;code&gt;~/.screenrc&lt;/code&gt;. Dependendo de onde colocar, ela valerá
+para todo o sistema ou somente para o usuário corrente, respectivamente.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vbell off
+hardstatus off
+backtick 1 1200 1200 whoami
+caption always &amp;quot;%{= cW} %c | %l | %-Lw%{= bW}%65&amp;gt; [%n] %t %f* %{-}%+Lw%&amp;lt;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A partir deste exemplo, você pode personalizar sua barra de status da forma que quiser. São dezenas de opções que ao
+invés de citar aqui, recomendo que leia no manual do próprio screen (&lt;code&gt;man screen&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Veja como ficou:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://hgfischer.org/media/screen.png&#34; alt=&#34;captura de tela do terminal rodando screen&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Observe que no rodapé do terminal encontra-se várias informações: Relógio, Load Average e a lista de janelas. A janela
+atual aparece destacada em azul.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

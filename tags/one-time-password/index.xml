@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>One Time Password on Memory Leak</title>
+    <link>http://hgfischer.org/tags/one-time-password/</link>
+    <description>Recent content in One Time Password on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 20 Nov 2014 22:12:13 -0200</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/one-time-password/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Go-OTP</title>
+      <link>http://hgfischer.org/project/go-otp/</link>
+      <pubDate>Thu, 20 Nov 2014 22:12:13 -0200</pubDate>
+      
+      <guid>http://hgfischer.org/project/go-otp/</guid>
+      <description>&lt;p&gt;Package go-otp implements one-time-password generators used in 2-factor authentication systems like RSA-tokens.
+Currently this supports both HOTP (RFC-4226) and TOTP (RFC-6238).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hgfischer/go-otp&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://godoc.org/github.com/hgfischer/go-otp&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

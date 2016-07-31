@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netatalk on Memory Leak</title>
+    <link>http://hgfischer.org/tags/netatalk/</link>
+    <description>Recent content in Netatalk on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Mon, 29 Jun 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/netatalk/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Netatalk DB_VERSION_MISMATCH</title>
+      <link>http://hgfischer.org/artigo/netatalk-db-version-mismatch/</link>
+      <pubDate>Mon, 29 Jun 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/netatalk-db-version-mismatch/</guid>
+      <description>&lt;p&gt;Recentemente me deparei com um mal comportamento do meu &amp;ldquo;Time Capsule&amp;rdquo; caseiro. Quando tentava acessar os
+compartilhamentos pelo Finder, ele não conseguia conectar.&lt;/p&gt;
+
+&lt;p&gt;Nos logs apareciam erros como este:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cnid_open: dbenv-&amp;gt;open (rw) of /Volumes/Storage/.AppleDB failed:
+DB_VERSION_MISMATCH: Database environment version mismatch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Foi então que percebi que na última atualização do Gentoo, o BerkeleyDB havia sido atualizado. O que fiz então foi
+recompilar o netatalk com o comando &lt;code&gt;emerge netatalk&lt;/code&gt; e depois remover os diretórios .AppleDB do storage:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# find /Volumes/Storage -name &#39;.AppleDB&#39; -exec rm -rfv {} \;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Isto resolveu o problema.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

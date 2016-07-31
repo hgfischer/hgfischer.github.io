@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu on Memory Leak</title>
+    <link>http://hgfischer.org/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 23 Nov 2014 23:21:56 +0000</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux e Notebooks Samsung</title>
+      <link>http://hgfischer.org/artigo/linux-notebook-samsung/</link>
+      <pubDate>Sun, 23 Nov 2014 23:21:56 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/linux-notebook-samsung/</guid>
+      <description>&lt;p&gt;Linux e Notebooks já deixaram de ser uma dicotomia, mas alguns problemas ainda surgem em pleno 2014. Fabricantes de
+hardware não param de inovar e ao mesmo tempo a comunidade nem sempre consegue todas as informações necessárias para
+implementar os drivers e módulos para o novo hardware no Kernel.&lt;/p&gt;
+
+&lt;p&gt;Meu notebook Samsung NP550P5C-AD1BR é uma excelente máquina, mas tem um problema com aquecimento excessivo. A BIOS dele
+não oferece opções para lidar com a configuração da ventoínha, nem minha instalação do Ubuntu 14.04 LTS que simplesmente
+se recusa a detectar a ventoínha, mesmo utilizando o módulo &lt;code&gt;samsung-laptop&lt;/code&gt; e o software &lt;code&gt;samsung-tools&lt;/code&gt; que em teoria
+deveriam funcionar.&lt;/p&gt;
+
+&lt;p&gt;Após muita pesquisa descobri que os notebooks Samsung possuem um problema relacionado ao uso da UEFI e que este problema
+foi contornado em versões anteriores do Kernel, com um &lt;em&gt;patch&lt;/em&gt; do próprio Linus Torvalds. Uma outra alteração para estes
+notebooks, fez com que o módulo de kernel &lt;code&gt;samsung-laptop&lt;/code&gt; deixasse de funcionar caso o notebook esteja operando em modo
+UEFI ao invés do modo legado da BIOS.&lt;/p&gt;
+
+&lt;p&gt;Eu ainda tinha um problema com aquecimento e não estava vendo a BIOS do notebook ajustar adequadamente a velocidade da
+ventoínha para dissipar o calor. Por este motivo voltei atrás e reinstalei o Linux (obrigado Puppet!) sob o modo legado
+da BIOS, para conseguir utilizar o devido módulo do kernel e forçar uma velocidade maior da ventoínha.&lt;/p&gt;
+
+&lt;p&gt;Com isso, a temperatura média da CPU caiu de 80ºC para 50ºC!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Eclipse theme under Ubuntu</title>
+      <link>http://hgfischer.org/article/eclipse-theme-under-ubuntu-unity/</link>
+      <pubDate>Sat, 29 Oct 2011 11:41:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/article/eclipse-theme-under-ubuntu-unity/</guid>
+      <description>&lt;p&gt;Looks like there are a lot of complaints about Eclipse look-and-feel under Ubuntu Unity (10.10 and 11.04). The main
+problem is that there are a few inconsistencies with default Eclipse coloring and Ubuntu system colors. Some interface
+objects have low color contrast, like tooltips and selection lists.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve found a few solutions on the web to this problem, but none solved the whole problem. Some suggested to edit a file
+and force a color only to tooltips but this is counter-productive because tooltips are not the only object with color
+problems in this situation.&lt;/p&gt;
+
+&lt;p&gt;So, if you don&amp;rsquo;t mind having to change all colors in your Ubuntu, I&amp;rsquo;ve found out a simple solution to the problem.
+Install gtk-chtheme, open it and choose a theme that works better with Unity theme. I&amp;rsquo;ve found out that the Human theme
+works very well.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install gtk-chtheme
+$ gtk-chtheme
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See ya!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

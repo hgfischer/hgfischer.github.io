@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Subtitles on Memory Leak</title>
+    <link>http://hgfischer.org/tags/subtitles/</link>
+    <description>Recent content in Subtitles on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 15 Jul 2010 08:32:00 +0000</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/subtitles/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Script para embutir legendas em arquivos MKV</title>
+      <link>http://hgfischer.org/artigo/script-embutir-legendas-mkv/</link>
+      <pubDate>Thu, 15 Jul 2010 08:32:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/script-embutir-legendas-mkv/</guid>
+      <description>&lt;p&gt;Já faz algum tempo que o VLC para Mac não carrega as legendas automaticamente. Nem a última versão 1.1.0 faz isso mais.
+E o Mkvtoolnix não é muito prático para utilizar com muitos arquivos, para juntar filmes e legendas. Foi por este
+motivo que resolvi fazer um pequeno script que utiliza o mkvmerge que acompanha o próprio Mkvtoolnix para automatizar
+a inclusão de legendas em filmes.&lt;/p&gt;
+
+&lt;p&gt;Ele está bem simples e é recomendado para aqueles que tem algum conhecimento de shell scripts. Ele pode ser facilmente
+utilizado em Linux também, possivelmente sem nenhuma necessidade de adaptação.&lt;/p&gt;
+
+&lt;p&gt;O padrão de funcionamento é o seguinte:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;O script deve estar no mesmo diretório dos arquivos MKV e SRT.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Os arquivos MKV e suas respectivas legendas SRT devem ter o mesmo nome de arquivo (ignorando-se a extensão).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Eu fiz o script para juntar legendas em português. Caso a legenda seja em outro idioma, ajuste o trecho do comando &lt;code&gt;--language 0:por&lt;/code&gt; para o idioma correto. Para saber qual o código correto do idioma, utilize o comando &lt;code&gt;mkvmerge --list-languages&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Com pouca adaptação é possível melhorar o script para rodar de qualquer diretório, ser mais inteligente em achar
+legendas, etc., mas o meu problema este aqui já foi suficiente para resolver.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+export IFS=$&#39;\t\n&#39;
+for mkv in `ls -1 *.mkv`
+do
+	bname=`basename -s &#39;.mkv&#39; $mkv`
+	srt=`echo &amp;quot;${bname}.srt&amp;quot;`
+	newmkv=`echo &amp;quot;${bname}.MERGED.mkv&amp;quot;`
+
+	mkvmerge -o &amp;quot;$newmkv&amp;quot; &amp;quot;$mkv&amp;quot; \
+		--sub-charset 0:ISO-8859-1 --language 0:por --default-track 0:yes &amp;quot;$srt&amp;quot; \
+		--track-order 0:1,0:2,1:0
+		
+	mv &amp;quot;$mkv&amp;quot; ~/.Trash/
+	mv &amp;quot;$srt&amp;quot; ~/.Trash/
+done
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

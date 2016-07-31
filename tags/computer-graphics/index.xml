@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer Graphics on Memory Leak</title>
+    <link>http://hgfischer.org/tags/computer-graphics/</link>
+    <description>Recent content in Computer Graphics on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 10 Aug 2013 15:13:00 +0000</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/computer-graphics/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ImageMagick bindings for Go</title>
+      <link>http://hgfischer.org/project/go-imagemagick/</link>
+      <pubDate>Sat, 10 Aug 2013 15:13:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/project/go-imagemagick/</guid>
+      <description>&lt;p&gt;A few months ago I&amp;rsquo;ve spent some days developing my first cgo binding and the chosen library was
+&lt;a href=&#34;http://www.imagemagick.org/script/magick-wand.php&#34;&gt;ImageMagick&amp;rsquo;s MagickWand&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It was an interesting experience. It&amp;rsquo;s relatively very easy to do such thing in Go. I&amp;rsquo;m still not using this binding in
+production and I hope someone can try it. I took care to port some examples from C to Go also, so that should be easier
+to start using it. And since ImageMagick is a huge library I was not able to test every function through the binding.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gographics/imagick&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gowalker.org/github.com/gographics/imagick/imagick&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cidade Flutuante</title>
+      <link>http://hgfischer.org/artigo/cidade-flutuante/</link>
+      <pubDate>Sat, 21 Nov 2009 18:37:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/cidade-flutuante/</guid>
+      <description>&lt;p&gt;Este é o primeiro trabalho gráfico que desenvolvi junto com minha esposa e utilizando apenas fotos (nada de 3D como
+nos anteriores). Utilizamos uma foto do &lt;a href=&#34;http://en.wikipedia.org/wiki/Mont_Saint-Michel&#34;&gt;Mt. St. Michel&lt;/a&gt; na França e
+uma foto de montanhas dos Estados Unidos para compor o elemento principal. Também utilizamos uma foto de nuvens e
+algumas &lt;em&gt;brushes&lt;/em&gt; para compor o restante da cena.&lt;/p&gt;
+
+&lt;figure &gt;
+    
+	&lt;img class=&#34;img-thumbnail img-responsive&#34;
+		src=&#34;/media/cidade-flutuante-by-herbert-e-ester.jpg&#34; 
+		alt=&#34;Cidade Flutuante&#34; &gt;
+	 
+	
+	&lt;figcaption&gt;
+		
+		&lt;p&gt;
+        Cidade Flutuante 
+        
+        
+        &lt;/p&gt;
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

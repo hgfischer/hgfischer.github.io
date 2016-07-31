@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Memory Leak</title>
+    <link>http://hgfischer.org/project/</link>
+    <description>Recent content in Projects on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 20 Nov 2014 22:12:13 -0200</lastBuildDate>
+    <atom:link href="http://hgfischer.org/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Go-OTP</title>
+      <link>http://hgfischer.org/project/go-otp/</link>
+      <pubDate>Thu, 20 Nov 2014 22:12:13 -0200</pubDate>
+      
+      <guid>http://hgfischer.org/project/go-otp/</guid>
+      <description>&lt;p&gt;Package go-otp implements one-time-password generators used in 2-factor authentication systems like RSA-tokens.
+Currently this supports both HOTP (RFC-4226) and TOTP (RFC-6238).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hgfischer/go-otp&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://godoc.org/github.com/hgfischer/go-otp&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MySQL Super Dump</title>
+      <link>http://hgfischer.org/project/mysqlsuperdump/</link>
+      <pubDate>Sat, 10 Aug 2013 15:19:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/project/mysqlsuperdump/</guid>
+      <description>&lt;p&gt;The following text is fiction based on a true story, but it can happen with lots of development teams over the world:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Once upon a time there was a development team that liked to use dumps from the production database in their
+development environments to have the same content and behavior of the production system in their machines.
+To avoid security problems, the system administrator created a script to dump the production database, import in a
+temporary database, then replace all sensitive data, like salts, passwords, customer names, emails, etc, for fake
+data, then export a dump of this temporary database to a file that is the dump developers would use.
+However this script was taking more time to run, day by day, and each day it was using more resources from the
+server to run, until it exploded!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Based on this true story I&amp;rsquo;ve decided to make a program to solve this problem. The first version was made in Python 2.7
+in a few hours, but I got trapped in text encoding problems of Python and MySQLdb library. So I&amp;rsquo;ve decided to rewrite
+it using Go.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hgfischer/mysqlsuperdump&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ImageMagick bindings for Go</title>
+      <link>http://hgfischer.org/project/go-imagemagick/</link>
+      <pubDate>Sat, 10 Aug 2013 15:13:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/project/go-imagemagick/</guid>
+      <description>&lt;p&gt;A few months ago I&amp;rsquo;ve spent some days developing my first cgo binding and the chosen library was
+&lt;a href=&#34;http://www.imagemagick.org/script/magick-wand.php&#34;&gt;ImageMagick&amp;rsquo;s MagickWand&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It was an interesting experience. It&amp;rsquo;s relatively very easy to do such thing in Go. I&amp;rsquo;m still not using this binding in
+production and I hope someone can try it. I took care to port some examples from C to Go also, so that should be easier
+to start using it. And since ImageMagick is a huge library I was not able to test every function through the binding.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gographics/imagick&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gowalker.org/github.com/gographics/imagick/imagick&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Memory Leak</title>
+    <link>http://hgfischer.org/tags/programming/</link>
+    <description>Recent content in Programming on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 10 Aug 2013 15:13:00 +0000</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ImageMagick bindings for Go</title>
+      <link>http://hgfischer.org/project/go-imagemagick/</link>
+      <pubDate>Sat, 10 Aug 2013 15:13:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/project/go-imagemagick/</guid>
+      <description>&lt;p&gt;A few months ago I&amp;rsquo;ve spent some days developing my first cgo binding and the chosen library was
+&lt;a href=&#34;http://www.imagemagick.org/script/magick-wand.php&#34;&gt;ImageMagick&amp;rsquo;s MagickWand&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It was an interesting experience. It&amp;rsquo;s relatively very easy to do such thing in Go. I&amp;rsquo;m still not using this binding in
+production and I hope someone can try it. I took care to port some examples from C to Go also, so that should be easier
+to start using it. And since ImageMagick is a huge library I was not able to test every function through the binding.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gographics/imagick&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gowalker.org/github.com/gographics/imagick/imagick&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Script para embutir legendas em arquivos MKV</title>
+      <link>http://hgfischer.org/artigo/script-embutir-legendas-mkv/</link>
+      <pubDate>Thu, 15 Jul 2010 08:32:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/script-embutir-legendas-mkv/</guid>
+      <description>&lt;p&gt;Já faz algum tempo que o VLC para Mac não carrega as legendas automaticamente. Nem a última versão 1.1.0 faz isso mais.
+E o Mkvtoolnix não é muito prático para utilizar com muitos arquivos, para juntar filmes e legendas. Foi por este
+motivo que resolvi fazer um pequeno script que utiliza o mkvmerge que acompanha o próprio Mkvtoolnix para automatizar
+a inclusão de legendas em filmes.&lt;/p&gt;
+
+&lt;p&gt;Ele está bem simples e é recomendado para aqueles que tem algum conhecimento de shell scripts. Ele pode ser facilmente
+utilizado em Linux também, possivelmente sem nenhuma necessidade de adaptação.&lt;/p&gt;
+
+&lt;p&gt;O padrão de funcionamento é o seguinte:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;O script deve estar no mesmo diretório dos arquivos MKV e SRT.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Os arquivos MKV e suas respectivas legendas SRT devem ter o mesmo nome de arquivo (ignorando-se a extensão).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Eu fiz o script para juntar legendas em português. Caso a legenda seja em outro idioma, ajuste o trecho do comando &lt;code&gt;--language 0:por&lt;/code&gt; para o idioma correto. Para saber qual o código correto do idioma, utilize o comando &lt;code&gt;mkvmerge --list-languages&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Com pouca adaptação é possível melhorar o script para rodar de qualquer diretório, ser mais inteligente em achar
+legendas, etc., mas o meu problema este aqui já foi suficiente para resolver.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+export IFS=$&#39;\t\n&#39;
+for mkv in `ls -1 *.mkv`
+do
+	bname=`basename -s &#39;.mkv&#39; $mkv`
+	srt=`echo &amp;quot;${bname}.srt&amp;quot;`
+	newmkv=`echo &amp;quot;${bname}.MERGED.mkv&amp;quot;`
+
+	mkvmerge -o &amp;quot;$newmkv&amp;quot; &amp;quot;$mkv&amp;quot; \
+		--sub-charset 0:ISO-8859-1 --language 0:por --default-track 0:yes &amp;quot;$srt&amp;quot; \
+		--track-order 0:1,0:2,1:0
+		
+	mv &amp;quot;$mkv&amp;quot; ~/.Trash/
+	mv &amp;quot;$srt&amp;quot; ~/.Trash/
+done
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Erlang no Mac OS X Leopard</title>
+      <link>http://hgfischer.org/artigo/erlang-macosx-leopard/</link>
+      <pubDate>Sat, 04 Apr 2009 18:03:00 -0200</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/erlang-macosx-leopard/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://pt.wikipedia.org/wiki/Erlang_(linguagem_de_programa%C3%A7%C3%A3o)&#34;&gt;Erlang&lt;/a&gt; é uma
+&lt;a href=&#34;http://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_funcional&#34;&gt;linguagem de programação funcional&lt;/a&gt; criada pela Ericsson
+em 1987 que tem foco em concorrência, sistemas distribuídos e tolerância a falhas. Ultimamente vêm se tornando muito
+conhecida graças a seus recursos de concorrência e a &lt;a href=&#34;http://www.ddj.com/architect/184405990&#34;&gt;necessidade por tais facilidades&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para prosseguir com meus breves estudos de Erlang, resolvi instalá-lo no Mac. Considerei instalá-lo em uma máquina
+virtual VMware ou Parallels, mas isso envolveria a aquisição destes softwares. Além disso eu não estaria aproveitando
+100% do hardware para testar a capacidade do Erlang, sendo assim, preferi instalá-lo diretamente no &lt;em&gt;host&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Bom, vamos ao que interessa.&lt;/p&gt;
+
+&lt;h2 id=&#34;requisitos&#34;&gt;Requisitos&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Source do Erlang, encontrado &lt;a href=&#34;http://erlang.org/download.html&#34;&gt;aqui&lt;/a&gt;. Utilizei a versão R13A (17 Março 2009).
+É recomendado também efetuar o download da documentação em formato &lt;em&gt;man&lt;/em&gt;;&lt;/li&gt;
+&lt;li&gt;Apple Xcode 3, encontrado em &lt;a href=&#34;http://developer.apple.com/technology/xcode.html&#34;&gt;aqui&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;compilar-e-instalar&#34;&gt;Compilar e instalar&lt;/h2&gt;
+
+&lt;p&gt;Criei uma pasta dentro do &lt;code&gt;$HOME&lt;/code&gt; e deixei lá dentro tudo o que precisei para compilar o Erlang.&lt;/p&gt;
+
+&lt;p&gt;Os comandos abaixo estão de acordo com as versões que utilizei. Caso utilize uma versão diferente, faça as devidas
+alterações nos nomes de arquivos e diretórios. Caso descubra alguma particularidade da versão, fique à vontade para
+comentar no final deste artigo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ tar xvzf otp_src_R13A.tar.gz
+$ cd otp_src_R13A
+$ ./configure --enable-hipe --enable-smp-support --enable-threads
+$ make
+$ sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para testar o Erlang:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ erl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Você verá algo assim:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Erlang R13A (erts-5.7)
+[source][/source]
+[smp:2:2] [rq:2] [async-threads:0] [hipe] [kernel-poll:false] Eshell V5.7 (abort with ^G) 1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para sair pressione &lt;code&gt;Ctrl-C&lt;/code&gt;, escolha a opção &lt;em&gt;a&lt;/em&gt; e pressione &lt;em&gt;ENTER&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;BREAK: (a)bort (c)ontinue (p)roc info (i)nfo (l)oaded
+       (v)ersion (k)ill (D)b-tables (d)istribution
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;O caminho padrão de instalação é /usr/local. Caso queira utilizar outro prefixo, é necessário utilizar a
+opção &lt;code&gt;--prefix&lt;/code&gt; no comando configure.&lt;/p&gt;
+
+&lt;h2 id=&#34;documentação&#34;&gt;Documentação&lt;/h2&gt;
+
+&lt;p&gt;Para instalar a documentação em formato &lt;em&gt;man&lt;/em&gt;, utilize o seguinte comando:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo tar xvzf otp_doc_man_R13A.tar.gz -C /usr/local/share
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para testar a documentação:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ man erl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;testando&#34;&gt;Testando&lt;/h2&gt;
+
+&lt;p&gt;Para testar se o básico está funcionando, crie um arquivo chamado hello.erl com o código abaixo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-module(hello).
+-export([hello_werld/0]).
+
+hello_werld()-&amp;gt;
+	io:format(&amp;quot;Hello WErld ~n&amp;quot;).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para compilar e executar o teste:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ erl -compile hello
+$ erl -noshell -s hello hello_werld -s init stop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pronto! Já pode dominar o mundo Pink!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Memory Leak</title>
+    <link>http://hgfischer.org/tags/linux/</link>
+    <description>Recent content in Linux on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 05 Feb 2015 21:26:44 +0000</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Manage multiple GOPATH dirs with ease</title>
+      <link>http://hgfischer.org/article/managing-multiple-gopaths/</link>
+      <pubDate>Thu, 05 Feb 2015 21:26:44 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/article/managing-multiple-gopaths/</guid>
+      <description>&lt;p&gt;Usually I have only one GOPATH in my machine and thats most Gophers out there recommend. However, sometimes we just
+need to work on different projects with different versions of the same dependency, and it is out of question to update
+them. We just don&amp;rsquo;t want to break something that is working, or mess with it.&lt;/p&gt;
+
+&lt;p&gt;The quick solution is to point GOPATH to somewhere else, but everytime we have to swap the project we are working on,
+we need to change it again.&lt;/p&gt;
+
+&lt;p&gt;So I just came up with a simple solution that works on command line shell with Bash, and can be adapted to other
+shells. Since I am a vim user, this should work well. I do not recommend this method for Sublime Text users or just any
+other IDE that uses its own method for setting GOPATH. It will not work unless you load the Editor/IDE from the same
+command line shell and it do not have its own way to setup GOPATH.&lt;/p&gt;
+
+&lt;p&gt;The solution is simple. Just include the following snippet in your &lt;code&gt;~/.bashrc&lt;/code&gt; (or &lt;code&gt;~/.bash_profile&lt;/code&gt;) and reload your
+shell environment with &lt;code&gt;source ~/.bashrc&lt;/code&gt;. This snippet will create a shell function that will override the builtin
+command &lt;code&gt;cd&lt;/code&gt; with a customized one that scans the entered directory, and every other above, for a file named &lt;code&gt;.gopath&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd () {
+    builtin cd &amp;quot;$@&amp;quot;
+    cdir=$PWD
+    while [ &amp;quot;$cdir&amp;quot; != &amp;quot;/&amp;quot; ]; do
+        if [ -e &amp;quot;$cdir/.gopath&amp;quot; ]; then
+            export GOPATH=$cdir
+            break
+        fi
+        cdir=$(dirname &amp;quot;$cdir&amp;quot;)
+    done
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you just need to create a &lt;code&gt;.gopath&lt;/code&gt; file in every directory you want as your GOPATH and every time you enter this
+directory, the redefined &lt;code&gt;cd&lt;/code&gt; function will set the GOPATH of your current environment to this directory.&lt;/p&gt;
+
+&lt;p&gt;For example, let us create two directories, &lt;code&gt;A&lt;/code&gt; and &lt;code&gt;B&lt;/code&gt;, both with a subdirectory &lt;code&gt;src&lt;/code&gt; to fully illustrate the solution.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ go env GOPATH
+/home/user/Go
+
+$ mkdir -p ~/A/src &amp;amp;&amp;amp; touch ~/A/.gopath
+$ mkdir -p ~/B/src &amp;amp;&amp;amp; touch ~/B/.gopath
+
+$ cd ~/A/src
+$ go env GOPATH
+/home/user/A
+
+$ cd ~/B/src
+$ go env GOPATH
+/home/user/B
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ok, but now I want my old GOPATH back again&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd /home/user/Go
+$ go env GOPATH
+/home/user/B
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Oops&amp;hellip; We just need to touch .gopath here!!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ touch /home/user/Go/.gopath
+$ cd .
+$ go env GOPATH
+/home/user/Go
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! Simple GOPATH management without external dependencies (eg. direnv)!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux e Notebooks Samsung</title>
+      <link>http://hgfischer.org/artigo/linux-notebook-samsung/</link>
+      <pubDate>Sun, 23 Nov 2014 23:21:56 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/linux-notebook-samsung/</guid>
+      <description>&lt;p&gt;Linux e Notebooks já deixaram de ser uma dicotomia, mas alguns problemas ainda surgem em pleno 2014. Fabricantes de
+hardware não param de inovar e ao mesmo tempo a comunidade nem sempre consegue todas as informações necessárias para
+implementar os drivers e módulos para o novo hardware no Kernel.&lt;/p&gt;
+
+&lt;p&gt;Meu notebook Samsung NP550P5C-AD1BR é uma excelente máquina, mas tem um problema com aquecimento excessivo. A BIOS dele
+não oferece opções para lidar com a configuração da ventoínha, nem minha instalação do Ubuntu 14.04 LTS que simplesmente
+se recusa a detectar a ventoínha, mesmo utilizando o módulo &lt;code&gt;samsung-laptop&lt;/code&gt; e o software &lt;code&gt;samsung-tools&lt;/code&gt; que em teoria
+deveriam funcionar.&lt;/p&gt;
+
+&lt;p&gt;Após muita pesquisa descobri que os notebooks Samsung possuem um problema relacionado ao uso da UEFI e que este problema
+foi contornado em versões anteriores do Kernel, com um &lt;em&gt;patch&lt;/em&gt; do próprio Linus Torvalds. Uma outra alteração para estes
+notebooks, fez com que o módulo de kernel &lt;code&gt;samsung-laptop&lt;/code&gt; deixasse de funcionar caso o notebook esteja operando em modo
+UEFI ao invés do modo legado da BIOS.&lt;/p&gt;
+
+&lt;p&gt;Eu ainda tinha um problema com aquecimento e não estava vendo a BIOS do notebook ajustar adequadamente a velocidade da
+ventoínha para dissipar o calor. Por este motivo voltei atrás e reinstalei o Linux (obrigado Puppet!) sob o modo legado
+da BIOS, para conseguir utilizar o devido módulo do kernel e forçar uma velocidade maior da ventoínha.&lt;/p&gt;
+
+&lt;p&gt;Com isso, a temperatura média da CPU caiu de 80ºC para 50ºC!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Do Mac para o Linux</title>
+      <link>http://hgfischer.org/artigo/do-mac-para-o-linux/</link>
+      <pubDate>Sat, 22 Nov 2014 21:08:56 -0200</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/do-mac-para-o-linux/</guid>
+      <description>
+
+&lt;p&gt;Eu voltei do mundo Mac para o mundo Linux no início de 2013 quando meu velho Macbook Pro 2008 começou a ficar
+ultrapassado. Lembro de passar uns maus bocados tentando abrir as fotos que estava tirando com minha câmera digital nele.&lt;/p&gt;
+
+&lt;p&gt;Sou usuário Linux desde a época em que se comprava revistas que vinham com CD do Conectiva Guarani. Naquela época era
+comum utilizar um &lt;em&gt;dual-boot&lt;/em&gt; com Windows, pois o Linux não era capaz de substituir a maioria das funções de um PC
+Windows. Nesta mesma época Macintosh era equipamento utilizado apenas em algumas agências de publicidade e estúdios de
+computação gráfica, como uma opção &amp;ldquo;acessível&amp;rdquo; às caríssimas estações da Silicon Graphics.&lt;/p&gt;
+
+&lt;p&gt;Eu só virei usuário Mac em 2009 quando fui influenciado pela comunidade de programadores que viam o equipamento como a
+melhor ferramenta, combinando uma plataforma estável e bonita, bons softwares comerciais (Textmate, Keynote, etc) com
+características da plataforma Unix. Isto ainda é factível, tirando algumas peculiaridades, como a falta de um gerenciador
+de pacotes confiável (MacPorts e Homebrew são horríveis) e os problemas com algumas tecnologias (ex.: Java), o que mais
+me incomoda é o alto custo.&lt;/p&gt;
+
+&lt;p&gt;Antes de desistir do Mac cheguei até a montar um Hackintosh caseiro, com 4x mais RAM e uma CPU mais recente, pra dar
+conta do trabalho pesado com fotos e vídeos. O projeto até que funcionou, de um certo modo. Era estável, mas não podia
+sequer pensar em fazer updates do sistema operacional, algo que me incomodava muito principalmente no quesito segurança.
+No final o Hackintosh virou um desktop Windows e o Steam nele virou &amp;ldquo;fumaça&amp;rdquo;, pois a falta de tempo e ânimo para jogar
+eram bem mais &amp;ldquo;sólidos&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Resolvi então trocar meu velho notebook por um que atendesse minhas necessidades. Muito espaço em disco, muita RAM e a
+melhor CPU que o melhor custo/benefício pudesse encontrar. Pesquisar Macs com estas características aqui no Brasil é uma
+tarefa desanimadora. Na época, lembro que um Macbook Pro Core i5 com 4GB de RAM e 500GB de HD custava algo em torno de
+R$4000 nas lojas que vendiam com Nota Fiscal. Enquanto isso, era fácil encontrar notebooks Windows com processadores
+Intel Core i7, 1TB de HD, BlueRay, 8GB de RAM, etc, por menos de R$2700. Como a grana estava curta, achei que valia a
+pena reconsiderar as outras opções.&lt;/p&gt;
+
+&lt;p&gt;Dado todo o background, não foi difícil voltar ao mundo Linux. Adquiri um notebook da Samsung top-de-linha por &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; do
+preço de um Macbook equivalente em termos de CPU, RAM e HD. Óbviamente os Macs são muito melhores em outros quesitos,
+como resistência, material, tela, gabinete, etc, mas isto tudo é secundário quando se precisa de alto custo/benefício.&lt;/p&gt;
+
+&lt;p&gt;Desde que retornei ao Linux, outros acontecimentos importantes corroborarm minha decisão:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Docker fundou um novo tipo de &lt;em&gt;cloud computing&lt;/em&gt; e é baseado em Linux. Desenvolvedores que utilizam Macs são obrigados
+a virtualizar Linux dentro de seus Macs para rodar Docker;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;NSA é revelada ao mundo como o Big Brother, inclusive com relações com grandes empresas incluindo a Apple;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Últimas versões do Mac OS X estão apresentando muitos problemas;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Apple seguindo para um modelo de hardware totalmente fechado e que não aceita upgrades;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;finalizando&#34;&gt;Finalizando&lt;/h2&gt;
+
+&lt;p&gt;Claro que nem tudo é perfeito. Ainda surgem problemas de estabilidade nas diferentes distribuições Linux, mas eu já
+aprendi a contornar o problema. Tenho um mecanismo eficiente de sincronia de arquivos como backup e automatizei todo o
+setup dos meus computadores Linux com Puppet. Desta forma não preciso hesitar muito em reinstalar o Linux ou atualizá-lo
+para uma versão mais nova.&lt;/p&gt;
+
+&lt;p&gt;Alias, este ano fiz um upgrade no meu notebook. Coloquei um SSD e o HD antigo entrou no lugar do BlueRay que praticamente
+não tem mais utilidade para mim. Fazer isto nos Macbooks mais novos, onde tudo é soldado na placa-mãe, é impossível.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Eclipse theme under Ubuntu</title>
+      <link>http://hgfischer.org/article/eclipse-theme-under-ubuntu-unity/</link>
+      <pubDate>Sat, 29 Oct 2011 11:41:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/article/eclipse-theme-under-ubuntu-unity/</guid>
+      <description>&lt;p&gt;Looks like there are a lot of complaints about Eclipse look-and-feel under Ubuntu Unity (10.10 and 11.04). The main
+problem is that there are a few inconsistencies with default Eclipse coloring and Ubuntu system colors. Some interface
+objects have low color contrast, like tooltips and selection lists.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve found a few solutions on the web to this problem, but none solved the whole problem. Some suggested to edit a file
+and force a color only to tooltips but this is counter-productive because tooltips are not the only object with color
+problems in this situation.&lt;/p&gt;
+
+&lt;p&gt;So, if you don&amp;rsquo;t mind having to change all colors in your Ubuntu, I&amp;rsquo;ve found out a simple solution to the problem.
+Install gtk-chtheme, open it and choose a theme that works better with Unity theme. I&amp;rsquo;ve found out that the Human theme
+works very well.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install gtk-chtheme
+$ gtk-chtheme
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See ya!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Extraíndo arquivos de um RPM</title>
+      <link>http://hgfischer.org/artigo/extraindo-arquivos-rpm/</link>
+      <pubDate>Mon, 03 Jan 2011 11:03:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/extraindo-arquivos-rpm/</guid>
+      <description>&lt;p&gt;Já me deparei com situações em que precisava de algum arquivo existente dentro de um RPM mas não queria instalá-lo.&lt;/p&gt;
+
+&lt;p&gt;A solução é extrair o conteúdo do RPM, só que o comando RPM não tem nenhuma opção padrão para fazer isto. É necessário
+então utilizar outras ferramentas.&lt;/p&gt;
+
+&lt;p&gt;Para fazer isto, basta utilizar o comando abaixo, substituindo o &amp;ldquo;arquivo.rpm&amp;rdquo; pelo nome do seu arquivo RPM:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rpm2cpio arquivo.rpm | cpio -vdim
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Netatalk DB_VERSION_MISMATCH</title>
+      <link>http://hgfischer.org/artigo/netatalk-db-version-mismatch/</link>
+      <pubDate>Mon, 29 Jun 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/netatalk-db-version-mismatch/</guid>
+      <description>&lt;p&gt;Recentemente me deparei com um mal comportamento do meu &amp;ldquo;Time Capsule&amp;rdquo; caseiro. Quando tentava acessar os
+compartilhamentos pelo Finder, ele não conseguia conectar.&lt;/p&gt;
+
+&lt;p&gt;Nos logs apareciam erros como este:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cnid_open: dbenv-&amp;gt;open (rw) of /Volumes/Storage/.AppleDB failed:
+DB_VERSION_MISMATCH: Database environment version mismatch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Foi então que percebi que na última atualização do Gentoo, o BerkeleyDB havia sido atualizado. O que fiz então foi
+recompilar o netatalk com o comando &lt;code&gt;emerge netatalk&lt;/code&gt; e depois remover os diretórios .AppleDB do storage:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# find /Volumes/Storage -name &#39;.AppleDB&#39; -exec rm -rfv {} \;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Isto resolveu o problema.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Barra de Status no GNU Screen</title>
+      <link>http://hgfischer.org/artigo/barra-status-gnu-screen/</link>
+      <pubDate>Mon, 08 Dec 2008 22:29:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/barra-status-gnu-screen/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.gnu.org/software/screen/&#34;&gt;GNU Screen&lt;/a&gt; é um gerenciador de terminais virtuais para a linha de comando. Seu
+uso em geral agiliza a administração remota de servidores pelo simples fato de ser necessário abrir apenas uma conexão
+SSH e através desta se pode ter vários terminais virtuais.&lt;/p&gt;
+
+&lt;p&gt;Uma outra vantagem em utilizar o GNU Screen, é deixar o gerenciador e retomá-lo sempre que precisar. Isso significa que
+você pode desconectar do servidor e deixar o gerenciador aberto com todas as &amp;ldquo;janelas&amp;rdquo; e processos rodando. Não só traz
+um benefício proposital, mas também pode salvar seu dia caso não tenha uma conexão estável com o servidor remoto.&lt;/p&gt;
+
+&lt;p&gt;Por estas e outras razões eu sempre utilizo GNU Screen quando possível (quando está instalado no servidor remoto).&lt;/p&gt;
+
+&lt;p&gt;No entanto por padrão ele não é muito amigável pois não exibe nenhuma informação na tela, sendo necessário utilizar
+atalhos de teclado para ver quais janelas estão abertas.&lt;/p&gt;
+
+&lt;p&gt;Após muito procurar, e isso já faz um bom tempo, consegui criar uma configuração padrão, para meus Screen. Esta exibe
+uma barra de informações na parte inferior da tela.&lt;/p&gt;
+
+&lt;p&gt;A configuração abaixo pode ser colocada no &lt;code&gt;/etc/screenrc&lt;/code&gt; ou no &lt;code&gt;~/.screenrc&lt;/code&gt;. Dependendo de onde colocar, ela valerá
+para todo o sistema ou somente para o usuário corrente, respectivamente.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vbell off
+hardstatus off
+backtick 1 1200 1200 whoami
+caption always &amp;quot;%{= cW} %c | %l | %-Lw%{= bW}%65&amp;gt; [%n] %t %f* %{-}%+Lw%&amp;lt;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A partir deste exemplo, você pode personalizar sua barra de status da forma que quiser. São dezenas de opções que ao
+invés de citar aqui, recomendo que leia no manual do próprio screen (&lt;code&gt;man screen&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Veja como ficou:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://hgfischer.org/media/screen.png&#34; alt=&#34;captura de tela do terminal rodando screen&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Observe que no rodapé do terminal encontra-se várias informações: Relógio, Load Average e a lista de janelas. A janela
+atual aparece destacada em azul.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

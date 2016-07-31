@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on Memory Leak</title>
+    <link>http://hgfischer.org/tags/database/</link>
+    <description>Recent content in Database on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 10 Aug 2013 15:19:00 +0000</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MySQL Super Dump</title>
+      <link>http://hgfischer.org/project/mysqlsuperdump/</link>
+      <pubDate>Sat, 10 Aug 2013 15:19:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/project/mysqlsuperdump/</guid>
+      <description>&lt;p&gt;The following text is fiction based on a true story, but it can happen with lots of development teams over the world:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Once upon a time there was a development team that liked to use dumps from the production database in their
+development environments to have the same content and behavior of the production system in their machines.
+To avoid security problems, the system administrator created a script to dump the production database, import in a
+temporary database, then replace all sensitive data, like salts, passwords, customer names, emails, etc, for fake
+data, then export a dump of this temporary database to a file that is the dump developers would use.
+However this script was taking more time to run, day by day, and each day it was using more resources from the
+server to run, until it exploded!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Based on this true story I&amp;rsquo;ve decided to make a program to solve this problem. The first version was made in Python 2.7
+in a few hours, but I got trapped in text encoding problems of Python and MySQLdb library. So I&amp;rsquo;ve decided to rewrite
+it using Go.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hgfischer/mysqlsuperdump&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

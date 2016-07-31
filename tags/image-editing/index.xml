@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Image Editing on Memory Leak</title>
+    <link>http://hgfischer.org/tags/image-editing/</link>
+    <description>Recent content in Image Editing on Memory Leak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 21 Nov 2009 18:37:00 +0000</lastBuildDate>
+    <atom:link href="http://hgfischer.org/tags/image-editing/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cidade Flutuante</title>
+      <link>http://hgfischer.org/artigo/cidade-flutuante/</link>
+      <pubDate>Sat, 21 Nov 2009 18:37:00 +0000</pubDate>
+      
+      <guid>http://hgfischer.org/artigo/cidade-flutuante/</guid>
+      <description>&lt;p&gt;Este é o primeiro trabalho gráfico que desenvolvi junto com minha esposa e utilizando apenas fotos (nada de 3D como
+nos anteriores). Utilizamos uma foto do &lt;a href=&#34;http://en.wikipedia.org/wiki/Mont_Saint-Michel&#34;&gt;Mt. St. Michel&lt;/a&gt; na França e
+uma foto de montanhas dos Estados Unidos para compor o elemento principal. Também utilizamos uma foto de nuvens e
+algumas &lt;em&gt;brushes&lt;/em&gt; para compor o restante da cena.&lt;/p&gt;
+
+&lt;figure &gt;
+    
+	&lt;img class=&#34;img-thumbnail img-responsive&#34;
+		src=&#34;/media/cidade-flutuante-by-herbert-e-ester.jpg&#34; 
+		alt=&#34;Cidade Flutuante&#34; &gt;
+	 
+	
+	&lt;figcaption&gt;
+		
+		&lt;p&gt;
+        Cidade Flutuante 
+        
+        
+        &lt;/p&gt;
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>
