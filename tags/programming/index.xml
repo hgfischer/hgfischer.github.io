@@ -2,11 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on Memory Leak</title>
-    <link>http://hgfischer.org/tags/programming/</link>
+    <link>http://hgfischer.org/tags/programming/index.xml</link>
     <description>Recent content in Programming on Memory Leak</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 10 Aug 2013 15:13:00 +0000</lastBuildDate>
     <atom:link href="http://hgfischer.org/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -82,12 +81,12 @@ done
       <pubDate>Sat, 04 Apr 2009 18:03:00 -0200</pubDate>
       
       <guid>http://hgfischer.org/artigo/erlang-macosx-leopard/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://pt.wikipedia.org/wiki/Erlang_(linguagem_de_programa%C3%A7%C3%A3o)&#34;&gt;Erlang&lt;/a&gt; é uma
+      <description>&lt;p&gt;&lt;a href=&#34;http://pt.wikipedia.org/wiki/Erlang_(linguagem_de_programa%C3%A7%C3%A3o)&#34;&gt;Erlang&lt;/a&gt; é uma
 &lt;a href=&#34;http://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_funcional&#34;&gt;linguagem de programação funcional&lt;/a&gt; criada pela Ericsson
 em 1987 que tem foco em concorrência, sistemas distribuídos e tolerância a falhas. Ultimamente vêm se tornando muito
 conhecida graças a seus recursos de concorrência e a &lt;a href=&#34;http://www.ddj.com/architect/184405990&#34;&gt;necessidade por tais facilidades&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Para prosseguir com meus breves estudos de Erlang, resolvi instalá-lo no Mac. Considerei instalá-lo em uma máquina
 virtual VMware ou Parallels, mas isso envolveria a aquisição destes softwares. Além disso eu não estaria aproveitando
@@ -168,8 +167,7 @@ hello_werld()-&amp;gt;
 $ erl -noshell -s hello hello_werld -s init stop
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Pronto! Já pode dominar o mundo Pink!&lt;/p&gt;
-</description>
+&lt;p&gt;Pronto! Já pode dominar o mundo Pink!&lt;/p&gt;</description>
     </item>
     
   </channel>

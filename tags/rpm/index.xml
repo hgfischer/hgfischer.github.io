@@ -2,11 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rpm on Memory Leak</title>
-    <link>http://hgfischer.org/tags/rpm/</link>
+    <link>http://hgfischer.org/tags/rpm/index.xml</link>
     <description>Recent content in Rpm on Memory Leak</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 03 Jan 2011 11:03:00 +0000</lastBuildDate>
     <atom:link href="http://hgfischer.org/tags/rpm/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,14 +16,15 @@
       <guid>http://hgfischer.org/artigo/extraindo-arquivos-rpm/</guid>
       <description>&lt;p&gt;Já me deparei com situações em que precisava de algum arquivo existente dentro de um RPM mas não queria instalá-lo.&lt;/p&gt;
 
+&lt;p&gt;&lt;/p&gt;
+
 &lt;p&gt;A solução é extrair o conteúdo do RPM, só que o comando RPM não tem nenhuma opção padrão para fazer isto. É necessário
 então utilizar outras ferramentas.&lt;/p&gt;
 
 &lt;p&gt;Para fazer isto, basta utilizar o comando abaixo, substituindo o &amp;ldquo;arquivo.rpm&amp;rdquo; pelo nome do seu arquivo RPM:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ rpm2cpio arquivo.rpm | cpio -vdim
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

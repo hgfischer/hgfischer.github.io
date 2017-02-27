@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://hgfischer.org/</loc>
-    <lastmod>2015-02-05T21:26:44+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://hgfischer.org/article/managing-multiple-gopaths/</loc>
     <lastmod>2015-02-05T21:26:44+00:00</lastmod>
   </url>
@@ -99,6 +94,269 @@
   <url>
     <loc>http://hgfischer.org/artigo/todas-vozes-mac/</loc>
     <lastmod>2008-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/article/</loc>
+    <lastmod>2015-02-05T21:26:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/artigo/</loc>
+    <lastmod>2014-11-23T23:21:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/bash/</loc>
+    <lastmod>2015-02-05T21:26:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/behaviour/</loc>
+    <lastmod>2011-02-09T21:41:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/computer-art/</loc>
+    <lastmod>2009-11-21T18:37:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/computer-graphics/</loc>
+    <lastmod>2013-08-10T15:13:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/database/</loc>
+    <lastmod>2013-08-10T15:19:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/devops/</loc>
+    <lastmod>2011-01-03T11:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/eclipse/</loc>
+    <lastmod>2011-10-29T11:41:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/erlang/</loc>
+    <lastmod>2009-04-04T18:03:00-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/golang/</loc>
+    <lastmod>2015-02-05T21:26:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/gopath/</loc>
+    <lastmod>2015-02-05T21:26:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/gtk/</loc>
+    <lastmod>2011-10-29T11:41:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/hardware/</loc>
+    <lastmod>2014-11-23T23:21:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/image-editing/</loc>
+    <lastmod>2009-11-21T18:37:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/kernel/</loc>
+    <lastmod>2014-11-23T23:21:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/linux/</loc>
+    <lastmod>2015-02-05T21:26:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/mac-os-x/</loc>
+    <lastmod>2014-11-22T21:08:56-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/macbook/</loc>
+    <lastmod>2014-11-22T21:08:56-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/</loc>
+    <lastmod>2015-02-05T21:26:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/mysql/</loc>
+    <lastmod>2013-08-10T15:19:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/netatalk/</loc>
+    <lastmod>2009-06-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/one-time-password/</loc>
+    <lastmod>2014-11-20T22:12:13-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/programming/</loc>
+    <lastmod>2013-08-10T15:13:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/project/</loc>
+    <lastmod>2014-11-20T22:12:13-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/rpm/</loc>
+    <lastmod>2011-01-03T11:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/samsung/</loc>
+    <lastmod>2014-11-23T23:21:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/screen/</loc>
+    <lastmod>2008-12-08T22:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/script/</loc>
+    <lastmod>2010-07-15T08:32:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/security/</loc>
+    <lastmod>2014-11-20T22:12:13-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/shell/</loc>
+    <lastmod>2015-02-05T21:26:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/sound/</loc>
+    <lastmod>2010-11-03T10:53:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/storage/</loc>
+    <lastmod>2009-06-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/subtitles/</loc>
+    <lastmod>2010-07-15T08:32:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/sysadm/</loc>
+    <lastmod>2011-01-03T11:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/text-to-speech/</loc>
+    <lastmod>2008-06-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/theme/</loc>
+    <lastmod>2011-10-29T11:41:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/time-capsule/</loc>
+    <lastmod>2009-06-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/trusty/</loc>
+    <lastmod>2014-11-23T23:21:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/ubuntu/</loc>
+    <lastmod>2014-11-23T23:21:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/unity/</loc>
+    <lastmod>2011-10-29T11:41:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/video/</loc>
+    <lastmod>2010-07-15T08:32:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hgfischer.org/tags/windows/</loc>
+    <lastmod>2011-02-09T21:41:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

@@ -2,11 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Storage on Memory Leak</title>
-    <link>http://hgfischer.org/tags/storage/</link>
+    <link>http://hgfischer.org/tags/storage/index.xml</link>
     <description>Recent content in Storage on Memory Leak</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 29 Jun 2009 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://hgfischer.org/tags/storage/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,6 +16,8 @@
       <guid>http://hgfischer.org/artigo/netatalk-db-version-mismatch/</guid>
       <description>&lt;p&gt;Recentemente me deparei com um mal comportamento do meu &amp;ldquo;Time Capsule&amp;rdquo; caseiro. Quando tentava acessar os
 compartilhamentos pelo Finder, ele não conseguia conectar.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Nos logs apareciam erros como este:&lt;/p&gt;
 
@@ -30,8 +31,7 @@ recompilar o netatalk com o comando &lt;code&gt;emerge netatalk&lt;/code&gt; e d
 &lt;pre&gt;&lt;code&gt;# find /Volumes/Storage -name &#39;.AppleDB&#39; -exec rm -rfv {} \;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Isto resolveu o problema.&lt;/p&gt;
-</description>
+&lt;p&gt;Isto resolveu o problema.&lt;/p&gt;</description>
     </item>
     
   </channel>

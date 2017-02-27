@@ -2,11 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Macbook on Memory Leak</title>
-    <link>http://hgfischer.org/tags/macbook/</link>
+    <link>http://hgfischer.org/tags/macbook/index.xml</link>
     <description>Recent content in Macbook on Memory Leak</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 22 Nov 2014 21:08:56 -0200</lastBuildDate>
     <atom:link href="http://hgfischer.org/tags/macbook/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -15,10 +14,10 @@
       <pubDate>Sat, 22 Nov 2014 21:08:56 -0200</pubDate>
       
       <guid>http://hgfischer.org/artigo/do-mac-para-o-linux/</guid>
-      <description>
-
-&lt;p&gt;Eu voltei do mundo Mac para o mundo Linux no início de 2013 quando meu velho Macbook Pro 2008 começou a ficar
+      <description>&lt;p&gt;Eu voltei do mundo Mac para o mundo Linux no início de 2013 quando meu velho Macbook Pro 2008 começou a ficar
 ultrapassado. Lembro de passar uns maus bocados tentando abrir as fotos que estava tirando com minha câmera digital nele.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Sou usuário Linux desde a época em que se comprava revistas que vinham com CD do Conectiva Guarani. Naquela época era
 comum utilizar um &lt;em&gt;dual-boot&lt;/em&gt; com Windows, pois o Linux não era capaz de substituir a maioria das funções de um PC
@@ -69,8 +68,7 @@ setup dos meus computadores Linux com Puppet. Desta forma não preciso hesitar m
 para uma versão mais nova.&lt;/p&gt;
 
 &lt;p&gt;Alias, este ano fiz um upgrade no meu notebook. Coloquei um SSD e o HD antigo entrou no lugar do BlueRay que praticamente
-não tem mais utilidade para mim. Fazer isto nos Macbooks mais novos, onde tudo é soldado na placa-mãe, é impossível.&lt;/p&gt;
-</description>
+não tem mais utilidade para mim. Fazer isto nos Macbooks mais novos, onde tudo é soldado na placa-mãe, é impossível.&lt;/p&gt;</description>
     </item>
     
   </channel>

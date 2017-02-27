@@ -2,11 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Image Editing on Memory Leak</title>
-    <link>http://hgfischer.org/tags/image-editing/</link>
+    <link>http://hgfischer.org/tags/image-editing/index.xml</link>
     <description>Recent content in Image Editing on Memory Leak</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 21 Nov 2009 18:37:00 +0000</lastBuildDate>
     <atom:link href="http://hgfischer.org/tags/image-editing/index.xml" rel="self" type="application/rss+xml" />
     
     <item>

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Memory Leak</title>
-    <link>http://hgfischer.org/project/</link>
+    <link>http://hgfischer.org/project/index.xml</link>
     <description>Recent content in Projects on Memory Leak</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>

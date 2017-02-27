@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Artigos on Memory Leak</title>
-    <link>http://hgfischer.org/artigo/</link>
+    <link>http://hgfischer.org/artigo/index.xml</link>
     <description>Recent content in Artigos on Memory Leak</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
@@ -19,6 +19,8 @@
 hardware não param de inovar e ao mesmo tempo a comunidade nem sempre consegue todas as informações necessárias para
 implementar os drivers e módulos para o novo hardware no Kernel.&lt;/p&gt;
 
+&lt;p&gt;&lt;/p&gt;
+
 &lt;p&gt;Meu notebook Samsung NP550P5C-AD1BR é uma excelente máquina, mas tem um problema com aquecimento excessivo. A BIOS dele
 não oferece opções para lidar com a configuração da ventoínha, nem minha instalação do Ubuntu 14.04 LTS que simplesmente
 se recusa a detectar a ventoínha, mesmo utilizando o módulo &lt;code&gt;samsung-laptop&lt;/code&gt; e o software &lt;code&gt;samsung-tools&lt;/code&gt; que em teoria
@@ -33,8 +35,7 @@ UEFI ao invés do modo legado da BIOS.&lt;/p&gt;
 ventoínha para dissipar o calor. Por este motivo voltei atrás e reinstalei o Linux (obrigado Puppet!) sob o modo legado
 da BIOS, para conseguir utilizar o devido módulo do kernel e forçar uma velocidade maior da ventoínha.&lt;/p&gt;
 
-&lt;p&gt;Com isso, a temperatura média da CPU caiu de 80ºC para 50ºC!&lt;/p&gt;
-</description>
+&lt;p&gt;Com isso, a temperatura média da CPU caiu de 80ºC para 50ºC!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -43,10 +44,10 @@ da BIOS, para conseguir utilizar o devido módulo do kernel e forçar uma veloci
       <pubDate>Sat, 22 Nov 2014 21:08:56 -0200</pubDate>
       
       <guid>http://hgfischer.org/artigo/do-mac-para-o-linux/</guid>
-      <description>
-
-&lt;p&gt;Eu voltei do mundo Mac para o mundo Linux no início de 2013 quando meu velho Macbook Pro 2008 começou a ficar
+      <description>&lt;p&gt;Eu voltei do mundo Mac para o mundo Linux no início de 2013 quando meu velho Macbook Pro 2008 começou a ficar
 ultrapassado. Lembro de passar uns maus bocados tentando abrir as fotos que estava tirando com minha câmera digital nele.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Sou usuário Linux desde a época em que se comprava revistas que vinham com CD do Conectiva Guarani. Naquela época era
 comum utilizar um &lt;em&gt;dual-boot&lt;/em&gt; com Windows, pois o Linux não era capaz de substituir a maioria das funções de um PC
@@ -97,8 +98,7 @@ setup dos meus computadores Linux com Puppet. Desta forma não preciso hesitar m
 para uma versão mais nova.&lt;/p&gt;
 
 &lt;p&gt;Alias, este ano fiz um upgrade no meu notebook. Coloquei um SSD e o HD antigo entrou no lugar do BlueRay que praticamente
-não tem mais utilidade para mim. Fazer isto nos Macbooks mais novos, onde tudo é soldado na placa-mãe, é impossível.&lt;/p&gt;
-</description>
+não tem mais utilidade para mim. Fazer isto nos Macbooks mais novos, onde tudo é soldado na placa-mãe, é impossível.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -110,6 +110,8 @@ não tem mais utilidade para mim. Fazer isto nos Macbooks mais novos, onde tudo 
       <description>&lt;p&gt;Como a grande maioria dos geeks de computador, eu tenho alguns amigos e familiares que são leigos na maioria dos
 assuntos relacionados ao dito PC e estes sempre possuem aquele medo de pegar alguma virose digital. Foi então que uma
 amiga me pediu uma recomendação de um bom antivírus para ela utilizar.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Como eu não sou usuário de Windows muito menos de antivírus há alguns anos e, inspirado pela vontade de escrever a
 explicação &amp;ldquo;definitiva&amp;rdquo; para meus amigos leigos, com o benefício de não ter que repetir a mesma resposta diversas
@@ -158,8 +160,7 @@ recomendo o &lt;a href=&#34;http://www.ubuntu.com&#34;&gt;Ubuntu Linux&lt;/a&gt;
 menores de hackers do que o Windows.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Estas são minhas regrinhas básicas de segurança. Se tiver alguma sugestão, contribua nos comentários&amp;hellip; ;-)&lt;/p&gt;
-</description>
+&lt;p&gt;Estas são minhas regrinhas básicas de segurança. Se tiver alguma sugestão, contribua nos comentários&amp;hellip; ;-)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -170,14 +171,15 @@ menores de hackers do que o Windows.&lt;/p&gt;&lt;/li&gt;
       <guid>http://hgfischer.org/artigo/extraindo-arquivos-rpm/</guid>
       <description>&lt;p&gt;Já me deparei com situações em que precisava de algum arquivo existente dentro de um RPM mas não queria instalá-lo.&lt;/p&gt;
 
+&lt;p&gt;&lt;/p&gt;
+
 &lt;p&gt;A solução é extrair o conteúdo do RPM, só que o comando RPM não tem nenhuma opção padrão para fazer isto. É necessário
 então utilizar outras ferramentas.&lt;/p&gt;
 
 &lt;p&gt;Para fazer isto, basta utilizar o comando abaixo, substituindo o &amp;ldquo;arquivo.rpm&amp;rdquo; pelo nome do seu arquivo RPM:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ rpm2cpio arquivo.rpm | cpio -vdim
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -189,6 +191,8 @@ então utilizar outras ferramentas.&lt;/p&gt;
       <description>&lt;p&gt;Utilizo um headset USB em casa para ouvir som e fazer ligações com Skype. Este tipo específico de headset
 aparece como um dispositivo separado de saída e entrada de som e tenho que trocar a saída padrão de som por ele.&lt;/p&gt;
 
+&lt;p&gt;&lt;/p&gt;
+
 &lt;p&gt;O jeito tradicional e óbvio de selecionar as saídas e entradas de som no Mac é através do &lt;strong&gt;System Preferences&lt;/strong&gt;  só
 que este método é lento.&lt;/p&gt;
 
@@ -196,8 +200,7 @@ que este método é lento.&lt;/p&gt;
 ícone do auto-falante na barra de menus do Mac. Ali aparecerá uma lista de dispositivos de entrada e saída de som que
 podem ser rapidamente alterados.&lt;/p&gt;
 
-&lt;p&gt;É isso&amp;hellip;&lt;/p&gt;
-</description>
+&lt;p&gt;É isso&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -255,6 +258,8 @@ done
       <guid>http://hgfischer.org/artigo/ejetando-cds-dvds-presos-mac/</guid>
       <description>&lt;p&gt;Eventualmente CDs e DVDs danificados ficam presos no drive de um Mac e este não consegue ejetá-los.&lt;/p&gt;
 
+&lt;p&gt;&lt;/p&gt;
+
 &lt;p&gt;Isto acontece porque o Mac OS X fica tentando ler as mídias e não consegue. Enquanto ele ficar tentando, ele não ejeta
 a mídia. Este problema já me ocorreu algumas vezes, principalmente após uma sessão de gravação mal sucedida por conta
 de mídia de baixa qualidade ou riscada.&lt;/p&gt;
@@ -278,8 +283,7 @@ $ drutil eject
 &lt;p&gt;Se mesmo assim ainda não funcionar, tente pressionar &lt;kbd&gt;ESC + Eject&lt;/kbd&gt; logo após a música de boot, após
 reinicializar o Mac.&lt;/p&gt;
 
-&lt;p&gt;E se mesmo assim nada funcionar, desculpe, mas é melhor procurar um profissional.&lt;/p&gt;
-</description>
+&lt;p&gt;E se mesmo assim nada funcionar, desculpe, mas é melhor procurar um profissional.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -355,12 +359,12 @@ done
       <pubDate>Tue, 04 Aug 2009 17:16:00 +0000</pubDate>
       
       <guid>http://hgfischer.org/artigo/agenda-criadores-agenda-administradores/</guid>
-      <description>
-
-&lt;p&gt;Tradução do texto &lt;a href=&#34;http://www.paulgraham.com/makersschedule.html&#34;&gt;Maker&amp;rsquo;s Schedule, Manager&amp;rsquo;s Schedule&lt;/a&gt; do Paul Graham.
+      <description>&lt;p&gt;Tradução do texto &lt;a href=&#34;http://www.paulgraham.com/makersschedule.html&#34;&gt;Maker&amp;rsquo;s Schedule, Manager&amp;rsquo;s Schedule&lt;/a&gt; do Paul Graham.
 A tradução não é 100% fiel ao texto original. Procurei adequar o texto à nossa cultura para melhor compreensão. Alguns
 termos e frases poderiam ter tradução estranha ou ambígua, portanto tentei utilizar os termos que melhor se adequavam
 ao contexto.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Nota do tradutor&lt;/strong&gt;: O termo &lt;em&gt;Maker&lt;/em&gt; utilizado no original significa aquele que faz e de forma abrangente é aquele que
 inventivamente e criativamente faz uma tarefa que exige grande concentração. Por falta de um termos mais adequado ao
@@ -463,8 +467,7 @@ das reuniões. Tudo o que perguntamos daqueles que estão no horário do adminis
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.paulgraham.com/love.html&#34;&gt;How to Do What You Love&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.paulgraham.com/procrastination.html&#34;&gt;Good and Bad Procrastination&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -475,6 +478,8 @@ das reuniões. Tudo o que perguntamos daqueles que estão no horário do adminis
       <guid>http://hgfischer.org/artigo/netatalk-db-version-mismatch/</guid>
       <description>&lt;p&gt;Recentemente me deparei com um mal comportamento do meu &amp;ldquo;Time Capsule&amp;rdquo; caseiro. Quando tentava acessar os
 compartilhamentos pelo Finder, ele não conseguia conectar.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Nos logs apareciam erros como este:&lt;/p&gt;
 
@@ -488,8 +493,7 @@ recompilar o netatalk com o comando &lt;code&gt;emerge netatalk&lt;/code&gt; e d
 &lt;pre&gt;&lt;code&gt;# find /Volumes/Storage -name &#39;.AppleDB&#39; -exec rm -rfv {} \;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Isto resolveu o problema.&lt;/p&gt;
-</description>
+&lt;p&gt;Isto resolveu o problema.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -498,12 +502,12 @@ recompilar o netatalk com o comando &lt;code&gt;emerge netatalk&lt;/code&gt; e d
       <pubDate>Sat, 04 Apr 2009 18:03:00 -0200</pubDate>
       
       <guid>http://hgfischer.org/artigo/erlang-macosx-leopard/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://pt.wikipedia.org/wiki/Erlang_(linguagem_de_programa%C3%A7%C3%A3o)&#34;&gt;Erlang&lt;/a&gt; é uma
+      <description>&lt;p&gt;&lt;a href=&#34;http://pt.wikipedia.org/wiki/Erlang_(linguagem_de_programa%C3%A7%C3%A3o)&#34;&gt;Erlang&lt;/a&gt; é uma
 &lt;a href=&#34;http://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_funcional&#34;&gt;linguagem de programação funcional&lt;/a&gt; criada pela Ericsson
 em 1987 que tem foco em concorrência, sistemas distribuídos e tolerância a falhas. Ultimamente vêm se tornando muito
 conhecida graças a seus recursos de concorrência e a &lt;a href=&#34;http://www.ddj.com/architect/184405990&#34;&gt;necessidade por tais facilidades&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Para prosseguir com meus breves estudos de Erlang, resolvi instalá-lo no Mac. Considerei instalá-lo em uma máquina
 virtual VMware ou Parallels, mas isso envolveria a aquisição destes softwares. Além disso eu não estaria aproveitando
@@ -584,8 +588,7 @@ hello_werld()-&amp;gt;
 $ erl -noshell -s hello hello_werld -s init stop
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Pronto! Já pode dominar o mundo Pink!&lt;/p&gt;
-</description>
+&lt;p&gt;Pronto! Já pode dominar o mundo Pink!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -597,6 +600,8 @@ $ erl -noshell -s hello hello_werld -s init stop
       <description>&lt;p&gt;&lt;a href=&#34;http://www.gnu.org/software/screen/&#34;&gt;GNU Screen&lt;/a&gt; é um gerenciador de terminais virtuais para a linha de comando. Seu
 uso em geral agiliza a administração remota de servidores pelo simples fato de ser necessário abrir apenas uma conexão
 SSH e através desta se pode ter vários terminais virtuais.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Uma outra vantagem em utilizar o GNU Screen, é deixar o gerenciador e retomá-lo sempre que precisar. Isso significa que
 você pode desconectar do servidor e deixar o gerenciador aberto com todas as &amp;ldquo;janelas&amp;rdquo; e processos rodando. Não só traz
@@ -627,8 +632,7 @@ invés de citar aqui, recomendo que leia no manual do próprio screen (&lt;code&
 &lt;p&gt;&lt;img src=&#34;http://hgfischer.org/media/screen.png&#34; alt=&#34;captura de tela do terminal rodando screen&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Observe que no rodapé do terminal encontra-se várias informações: Relógio, Load Average e a lista de janelas. A janela
-atual aparece destacada em azul.&lt;/p&gt;
-</description>
+atual aparece destacada em azul.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -638,6 +642,8 @@ atual aparece destacada em azul.&lt;/p&gt;
       
       <guid>http://hgfischer.org/artigo/todas-vozes-mac/</guid>
       <description>&lt;p&gt;Quem já não perdeu um bom tempo fuçando no sintetizador de voz do Mac OS X?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Pra facilitar a vida de quem quer ver como é o sintetizador falar uma determinada frase com todos os timbres de voz,
 fiz o script abaixo. É só colocar num arquivo &lt;em&gt;plain-text&lt;/em&gt;, dar permissão de execução e rodar o comando com qualquer
@@ -655,8 +661,7 @@ done
 &lt;p&gt;Exemplo de execução:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ ./falatudo.sh Hello World
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

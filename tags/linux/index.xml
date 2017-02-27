@@ -2,11 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Memory Leak</title>
-    <link>http://hgfischer.org/tags/linux/</link>
+    <link>http://hgfischer.org/tags/linux/index.xml</link>
     <description>Recent content in Linux on Memory Leak</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
-    <lastBuildDate>Thu, 05 Feb 2015 21:26:44 +0000</lastBuildDate>
     <atom:link href="http://hgfischer.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -93,6 +92,8 @@ $ go env GOPATH
 hardware não param de inovar e ao mesmo tempo a comunidade nem sempre consegue todas as informações necessárias para
 implementar os drivers e módulos para o novo hardware no Kernel.&lt;/p&gt;
 
+&lt;p&gt;&lt;/p&gt;
+
 &lt;p&gt;Meu notebook Samsung NP550P5C-AD1BR é uma excelente máquina, mas tem um problema com aquecimento excessivo. A BIOS dele
 não oferece opções para lidar com a configuração da ventoínha, nem minha instalação do Ubuntu 14.04 LTS que simplesmente
 se recusa a detectar a ventoínha, mesmo utilizando o módulo &lt;code&gt;samsung-laptop&lt;/code&gt; e o software &lt;code&gt;samsung-tools&lt;/code&gt; que em teoria
@@ -107,8 +108,7 @@ UEFI ao invés do modo legado da BIOS.&lt;/p&gt;
 ventoínha para dissipar o calor. Por este motivo voltei atrás e reinstalei o Linux (obrigado Puppet!) sob o modo legado
 da BIOS, para conseguir utilizar o devido módulo do kernel e forçar uma velocidade maior da ventoínha.&lt;/p&gt;
 
-&lt;p&gt;Com isso, a temperatura média da CPU caiu de 80ºC para 50ºC!&lt;/p&gt;
-</description>
+&lt;p&gt;Com isso, a temperatura média da CPU caiu de 80ºC para 50ºC!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -117,10 +117,10 @@ da BIOS, para conseguir utilizar o devido módulo do kernel e forçar uma veloci
       <pubDate>Sat, 22 Nov 2014 21:08:56 -0200</pubDate>
       
       <guid>http://hgfischer.org/artigo/do-mac-para-o-linux/</guid>
-      <description>
-
-&lt;p&gt;Eu voltei do mundo Mac para o mundo Linux no início de 2013 quando meu velho Macbook Pro 2008 começou a ficar
+      <description>&lt;p&gt;Eu voltei do mundo Mac para o mundo Linux no início de 2013 quando meu velho Macbook Pro 2008 começou a ficar
 ultrapassado. Lembro de passar uns maus bocados tentando abrir as fotos que estava tirando com minha câmera digital nele.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Sou usuário Linux desde a época em que se comprava revistas que vinham com CD do Conectiva Guarani. Naquela época era
 comum utilizar um &lt;em&gt;dual-boot&lt;/em&gt; com Windows, pois o Linux não era capaz de substituir a maioria das funções de um PC
@@ -171,8 +171,7 @@ setup dos meus computadores Linux com Puppet. Desta forma não preciso hesitar m
 para uma versão mais nova.&lt;/p&gt;
 
 &lt;p&gt;Alias, este ano fiz um upgrade no meu notebook. Coloquei um SSD e o HD antigo entrou no lugar do BlueRay que praticamente
-não tem mais utilidade para mim. Fazer isto nos Macbooks mais novos, onde tudo é soldado na placa-mãe, é impossível.&lt;/p&gt;
-</description>
+não tem mais utilidade para mim. Fazer isto nos Macbooks mais novos, onde tudo é soldado na placa-mãe, é impossível.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -209,14 +208,15 @@ $ gtk-chtheme
       <guid>http://hgfischer.org/artigo/extraindo-arquivos-rpm/</guid>
       <description>&lt;p&gt;Já me deparei com situações em que precisava de algum arquivo existente dentro de um RPM mas não queria instalá-lo.&lt;/p&gt;
 
+&lt;p&gt;&lt;/p&gt;
+
 &lt;p&gt;A solução é extrair o conteúdo do RPM, só que o comando RPM não tem nenhuma opção padrão para fazer isto. É necessário
 então utilizar outras ferramentas.&lt;/p&gt;
 
 &lt;p&gt;Para fazer isto, basta utilizar o comando abaixo, substituindo o &amp;ldquo;arquivo.rpm&amp;rdquo; pelo nome do seu arquivo RPM:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ rpm2cpio arquivo.rpm | cpio -vdim
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -227,6 +227,8 @@ então utilizar outras ferramentas.&lt;/p&gt;
       <guid>http://hgfischer.org/artigo/netatalk-db-version-mismatch/</guid>
       <description>&lt;p&gt;Recentemente me deparei com um mal comportamento do meu &amp;ldquo;Time Capsule&amp;rdquo; caseiro. Quando tentava acessar os
 compartilhamentos pelo Finder, ele não conseguia conectar.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Nos logs apareciam erros como este:&lt;/p&gt;
 
@@ -240,8 +242,7 @@ recompilar o netatalk com o comando &lt;code&gt;emerge netatalk&lt;/code&gt; e d
 &lt;pre&gt;&lt;code&gt;# find /Volumes/Storage -name &#39;.AppleDB&#39; -exec rm -rfv {} \;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Isto resolveu o problema.&lt;/p&gt;
-</description>
+&lt;p&gt;Isto resolveu o problema.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -253,6 +254,8 @@ recompilar o netatalk com o comando &lt;code&gt;emerge netatalk&lt;/code&gt; e d
       <description>&lt;p&gt;&lt;a href=&#34;http://www.gnu.org/software/screen/&#34;&gt;GNU Screen&lt;/a&gt; é um gerenciador de terminais virtuais para a linha de comando. Seu
 uso em geral agiliza a administração remota de servidores pelo simples fato de ser necessário abrir apenas uma conexão
 SSH e através desta se pode ter vários terminais virtuais.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Uma outra vantagem em utilizar o GNU Screen, é deixar o gerenciador e retomá-lo sempre que precisar. Isso significa que
 você pode desconectar do servidor e deixar o gerenciador aberto com todas as &amp;ldquo;janelas&amp;rdquo; e processos rodando. Não só traz
@@ -283,8 +286,7 @@ invés de citar aqui, recomendo que leia no manual do próprio screen (&lt;code&
 &lt;p&gt;&lt;img src=&#34;http://hgfischer.org/media/screen.png&#34; alt=&#34;captura de tela do terminal rodando screen&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Observe que no rodapé do terminal encontra-se várias informações: Relógio, Load Average e a lista de janelas. A janela
-atual aparece destacada em azul.&lt;/p&gt;
-</description>
+atual aparece destacada em azul.&lt;/p&gt;</description>
     </item>
     
   </channel>

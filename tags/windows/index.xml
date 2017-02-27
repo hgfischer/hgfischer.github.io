@@ -2,11 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on Memory Leak</title>
-    <link>http://hgfischer.org/tags/windows/</link>
+    <link>http://hgfischer.org/tags/windows/index.xml</link>
     <description>Recent content in Windows on Memory Leak</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 1997-2014, Herbert G. Fischer; all rights reserved.</copyright>
-    <lastBuildDate>Wed, 09 Feb 2011 21:41:00 +0000</lastBuildDate>
     <atom:link href="http://hgfischer.org/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -18,6 +17,8 @@
       <description>&lt;p&gt;Como a grande maioria dos geeks de computador, eu tenho alguns amigos e familiares que são leigos na maioria dos
 assuntos relacionados ao dito PC e estes sempre possuem aquele medo de pegar alguma virose digital. Foi então que uma
 amiga me pediu uma recomendação de um bom antivírus para ela utilizar.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Como eu não sou usuário de Windows muito menos de antivírus há alguns anos e, inspirado pela vontade de escrever a
 explicação &amp;ldquo;definitiva&amp;rdquo; para meus amigos leigos, com o benefício de não ter que repetir a mesma resposta diversas
@@ -66,8 +67,7 @@ recomendo o &lt;a href=&#34;http://www.ubuntu.com&#34;&gt;Ubuntu Linux&lt;/a&gt;
 menores de hackers do que o Windows.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Estas são minhas regrinhas básicas de segurança. Se tiver alguma sugestão, contribua nos comentários&amp;hellip; ;-)&lt;/p&gt;
-</description>
+&lt;p&gt;Estas são minhas regrinhas básicas de segurança. Se tiver alguma sugestão, contribua nos comentários&amp;hellip; ;-)&lt;/p&gt;</description>
     </item>
     
   </channel>
